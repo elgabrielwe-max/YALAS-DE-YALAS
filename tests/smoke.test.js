@@ -241,6 +241,17 @@ test('materiales nuevos del Maestro son buscables para ingreso aunque tengan sto
  assert.match(client,/\/api\/materials\/lookup\?search=/);assert.match(client,/function selectManualInventoryMaterial/);
 });
 
+test('Ingreso permite buscar materiales nuevos del Maestro por código nuevo, anterior o descripción',()=>{
+ const html=fs.readFileSync(path.join('public','index.html'),'utf8');
+ const client=fs.readFileSync(path.join('public','app.js'),'utf8');
+ assert.match(html,/id="incomeCode"[^>]*list="materialList"/);
+ assert.match(html,/<datalist id="materialList"><\/datalist>/);
+ assert.match(client,/async function resolveProduct\(value, warehouse=''/);
+ assert.match(client,/Primero consultar el Maestro general: incluye materiales activos con stock cero/);
+ assert.match(client,/\$\('#materialList'\)/);
+ assert.match(client,/\$\('#incomeWh'\)/);
+});
+
 test('módulo Kits con definición, armado por almacén y salida',()=>{
  const schema=fs.readFileSync(path.join('database','schema.sql'),'utf8');const server=fs.readFileSync(path.join('server','index.js'),'utf8');const html=fs.readFileSync(path.join('public','index.html'),'utf8');const client=fs.readFileSync(path.join('public','app.js'),'utf8');
  for(const table of ['kits','kit_components','kit_balances','kit_movements'])assert.match(schema,new RegExp('CREATE TABLE IF NOT EXISTS '+table));

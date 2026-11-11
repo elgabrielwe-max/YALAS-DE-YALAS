@@ -151,11 +151,22 @@ function updatePlacaCodes(){
 /* Resolución común de materiales: código, código anterior o descripción. */
 async function resolveProduct(value, warehouse=''){
  const t=String(value||'').trim(); if(!t)return null;
+ const wh=warehouse||$('#incomeWh')?.value||$('#outWh')?.value||'';
+ // Primero consultar el Maestro general: incluye materiales activos con stock cero
+ // y busca tanto por código actual, código anterior como por descripción.
  try{
-  return await api('/api/barcode/lookup?code='+encodeURIComponent(t)+'&warehouse='+encodeURIComponent(warehouse||$('#outWh')?.value||''));
- }catch(_){
-  const rows=await api('/api/materials?search='+encodeURIComponent(t)+'&warehouse='+encodeURIComponent(warehouse||$('#outWh')?.value||'')+'&limit=30');
-  return rows.find(x=>String(x.codigo).toLowerCase()===t.toLowerCase()||String(x.codigo_anterior||'').toLowerCase()===t.toLowerCase())||rows[0]||null;
+  const rows=await api('/api/materials/lookup?search='+encodeURIComponent(t)+'&warehouse='+encodeURIComponent(wh));
+  const exact=rows.find(x=>String(x.codigo).toLowerCase()===t.toLowerCase()
+    ||String(x.codigo_anterior||'').toLowerCase()===t.toLowerCase());
+  if(exact)return exact;
+  if(rows.length)return rows[0];
+ }catch(_){}
+ // Los códigos de barras siguen siendo válidos como vía alternativa.
+ try{return await api('/api/barcode/lookup?code='+encodeURIComponent(t)+'&warehouse='+encodeURIComponent(wh));}
+ catch(_){
+  const rows=await api('/api/materials?search='+encodeURIComponent(t)+'&warehouse='+encodeURIComponent(wh)+'&limit=30');
+  return rows.find(x=>String(x.codigo).toLowerCase()===t.toLowerCase()
+    ||String(x.codigo_anterior||'').toLowerCase()===t.toLowerCase())||rows[0]||null;
  }
 }
 let scannerReader=null,scannerControls=null,scannerTorchOn=false,scannerLastCode='',scannerInitialized=false;let scannerMode='lookup',scannerLoadMaterial='',scannerLoadCodes=[],scannerLoadDescription='',scannerLoadCurrentStock=0,scannerLastAcceptedAt=0;
@@ -262,7 +273,25 @@ $('#outCeco').addEventListener('change',()=>{const o=$('#outCeco').selectedOptio
 $('#outWh').addEventListener('change',()=>{const rows=$$('#issueItems tr');if(rows.some(tr=>tr.dataset.codigo)){if(!confirm('Cambiar de almacén limpiará los materiales seleccionados de la salida. ¿Continuar?'))return;$('#issueItems').innerHTML='';addIssueRow()}else refreshIssueStocks()});
 $('#outflowForm').onsubmit=async e=>{e.preventDefault();try{const h=Object.fromEntries(new FormData(e.target));setDigitacion(e.target);h.items=$$('#issueItems tr').map(tr=>({codigo:tr.dataset.codigo,cantidad:Math.max(1,Math.floor(Number(tr.querySelector('.issueQty').value||1))),costo_unitario:Number(tr.dataset.cost||0)})).filter(x=>x.codigo);if(!h.items.length)throw new Error('Agrega materiales y selecciónalos del listado');if(h.items.some(x=>x.cantidad<1))throw new Error('La cantidad mínima es 1');h.cliente='MINERA CHINALCO PERU S.A.A.';const r=await api('/api/outflow',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(h)});alert(`Salida registrada: ${r.numero}`);$('#issueItems').innerHTML='';$('#outPlaca').value='';addIssueRow();await loadDash();await loadInventory();await loadData(1)}catch(x){alert(x.message)}};
 
-$('#incomeCode').addEventListener('input',async()=>{const m=await resolveProduct($('#incomeCode').value);if(m){$('#incomeCode').value=m.codigo;$('#incomePreview').innerHTML=`<b>${esc(m.descripcion)}</b> · ${esc(m.unidad||'')} · Stock actual: ${num(m.stock)} · Costo promedio: ${money(m.costo_promedio)}`}});
+let incomeMaterialSearchTimer=null;
+$('#incomeCode').addEventListener('input',()=>{
+ clearTimeout(incomeMaterialSearchTimer);
+ const input=$('#incomeCode'),term=input.value.trim(),list=$('#materialList'),preview=$('#incomePreview');
+ if(term.length<1){list.innerHTML='';preview.textContent='';return}
+ incomeMaterialSearchTimer=setTimeout(async()=>{
+  try{
+   const rows=await api('/api/materials/lookup?search='+encodeURIComponent(term)+'&warehouse='+encodeURIComponent($('#incomeWh')?.value||''));
+   list.innerHTML=rows.map(m=>`<option value="${esc(m.codigo)}" label="${esc(m.descripcion)}${m.codigo_anterior?' · Anterior: '+esc(m.codigo_anterior):''} · Stock: ${num(m.stock)}"></option>`).join('');
+   const typed=term.toLowerCase();
+   const m=rows.find(x=>String(x.codigo).toLowerCase()===typed||String(x.codigo_anterior||'').toLowerCase()===typed)
+     ||(rows.length===1?rows[0]:null);
+   if(m)preview.innerHTML=`<b>${esc(m.codigo)} — ${esc(m.descripcion)}</b> · ${esc(m.unidad||'')} · Stock en almacén: ${num(m.stock)} · Costo promedio: ${money(m.costo_promedio)}`;
+   else if(rows.length)preview.textContent=`${rows.length} material(es) encontrados en el Maestro. Selecciona un código de la lista.`;
+   else preview.textContent='No se encontraron materiales activos con ese código o descripción.';
+  }catch(err){preview.textContent='No se pudo consultar el Maestro: '+err.message}
+ },180);
+});
+$('#incomeWh')?.addEventListener('change',()=>{$('#incomePreview').textContent='Almacén cambiado. Busca nuevamente el material para ver su stock en este almacén.';$('#materialList').innerHTML='';});
 $('#incomeForm').onsubmit=async e=>{e.preventDefault();try{const b=Object.fromEntries(new FormData(e.target));const m=await resolveProduct(b.codigo);if(!m)throw new Error('Producto no encontrado. Usa un código o nombre válido.');b.codigo=m.codigo;await api('/api/income',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});alert('Ingreso registrado correctamente');e.target.reset();setToday(e.target.querySelector('[name=fecha_atencion]'));setDigitacion(e.target);await loadDash();await loadInventory()}catch(x){alert(x.message)}};
 
 
