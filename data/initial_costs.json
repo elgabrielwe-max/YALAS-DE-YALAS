@@ -1,0 +1,1832 @@
+{
+  "MARH TUNEL|AC0602": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AC0602",
+    "cantidad_inicial": 2,
+    "costo_unitario": 0.2708333333333333
+  },
+  "MARH TUNEL|AC0607": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AC0607",
+    "cantidad_inicial": 2,
+    "costo_unitario": 14.5
+  },
+  "MARH TUNEL|AC0803": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AC0803",
+    "cantidad_inicial": 11,
+    "costo_unitario": 38.0
+  },
+  "MARH TUNEL|AC0901": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AC0901",
+    "cantidad_inicial": 31,
+    "costo_unitario": 8.864387096774193
+  },
+  "MARH TUNEL|AC1001": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AC1001",
+    "cantidad_inicial": 1,
+    "costo_unitario": 14.75
+  },
+  "MARH TUNEL|AC1002": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AC1002",
+    "cantidad_inicial": 1,
+    "costo_unitario": 14.75
+  },
+  "MARH TUNEL|AC1003": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AC1003",
+    "cantidad_inicial": 2,
+    "costo_unitario": 14.75
+  },
+  "MARH TUNEL|AC1302": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AC1302",
+    "cantidad_inicial": 2,
+    "costo_unitario": 4.0
+  },
+  "MARH TUNEL|AD0215": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AD0215",
+    "cantidad_inicial": 1,
+    "costo_unitario": 135.0
+  },
+  "MARH TUNEL|AL0700": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AL0700",
+    "cantidad_inicial": 7,
+    "costo_unitario": 17.8
+  },
+  "MARH TUNEL|EL0106": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL0106",
+    "cantidad_inicial": 1,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|EL0108A": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL0108A",
+    "cantidad_inicial": 300,
+    "costo_unitario": 3.2449999999999997
+  },
+  "MARH TUNEL|EL0564": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL0564",
+    "cantidad_inicial": 1,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|EL0774": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL0774",
+    "cantidad_inicial": 20,
+    "costo_unitario": 16.0
+  },
+  "MARH TUNEL|EL0804": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL0804",
+    "cantidad_inicial": 3,
+    "costo_unitario": 35.0
+  },
+  "MARH TUNEL|EL0808": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL0808",
+    "cantidad_inicial": 6,
+    "costo_unitario": 42.5
+  },
+  "MARH TUNEL|EL0904": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL0904",
+    "cantidad_inicial": 1,
+    "costo_unitario": 75.0
+  },
+  "MARH TUNEL|EL1102": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL1102",
+    "cantidad_inicial": 1,
+    "costo_unitario": 110.0
+  },
+  "MARH TUNEL|EL1502": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL1502",
+    "cantidad_inicial": 1,
+    "costo_unitario": 22.0
+  },
+  "MARH TUNEL|EL1701": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL1701",
+    "cantidad_inicial": 27,
+    "costo_unitario": 9.0
+  },
+  "MARH TUNEL|EL1721": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL1721",
+    "cantidad_inicial": 23,
+    "costo_unitario": 6.501785714285715
+  },
+  "MARH TUNEL|EL1744": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EL1744",
+    "cantidad_inicial": 5,
+    "costo_unitario": 10.0
+  },
+  "MARH TUNEL|EM0201": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0201",
+    "cantidad_inicial": 2,
+    "costo_unitario": 2.5
+  },
+  "MARH TUNEL|EM0201A": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0201A",
+    "cantidad_inicial": 1,
+    "costo_unitario": 1.5
+  },
+  "MARH TUNEL|EM0210": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0210",
+    "cantidad_inicial": 2,
+    "costo_unitario": 3.9885
+  },
+  "MARH TUNEL|EM0212": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0212",
+    "cantidad_inicial": 1,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|EM0213": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0213",
+    "cantidad_inicial": 1,
+    "costo_unitario": 20.0
+  },
+  "MARH TUNEL|EM0217": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0217",
+    "cantidad_inicial": 9,
+    "costo_unitario": 4.49575
+  },
+  "MARH TUNEL|EM0218": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0218",
+    "cantidad_inicial": 34,
+    "costo_unitario": 4.00025
+  },
+  "MARH TUNEL|EM0228": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0228",
+    "cantidad_inicial": 6,
+    "costo_unitario": 6.502
+  },
+  "MARH TUNEL|EM0229": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0229",
+    "cantidad_inicial": 3,
+    "costo_unitario": 3.0
+  },
+  "MARH TUNEL|EM0230": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0230",
+    "cantidad_inicial": 1,
+    "costo_unitario": 82.5
+  },
+  "MARH TUNEL|EM0232": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0232",
+    "cantidad_inicial": 25,
+    "costo_unitario": 4.00025
+  },
+  "MARH TUNEL|EM0237": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0237",
+    "cantidad_inicial": 1,
+    "costo_unitario": 3.0
+  },
+  "MARH TUNEL|EM0242": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0242",
+    "cantidad_inicial": 6,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|EM0247": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0247",
+    "cantidad_inicial": 3,
+    "costo_unitario": 5.0
+  },
+  "MARH TUNEL|EM0254": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0254",
+    "cantidad_inicial": 2,
+    "costo_unitario": 13.0
+  },
+  "MARH TUNEL|EM0260": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0260",
+    "cantidad_inicial": 1,
+    "costo_unitario": 7.0
+  },
+  "MARH TUNEL|EM0264": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0264",
+    "cantidad_inicial": 2,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|EM0265": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0265",
+    "cantidad_inicial": 1,
+    "costo_unitario": 5.0
+  },
+  "MARH TUNEL|EM0266": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0266",
+    "cantidad_inicial": 2,
+    "costo_unitario": 6.5
+  },
+  "MARH TUNEL|EM0290": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0290",
+    "cantidad_inicial": 2,
+    "costo_unitario": 17.995
+  },
+  "MARH TUNEL|EM0505": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0505",
+    "cantidad_inicial": 20,
+    "costo_unitario": 0.2
+  },
+  "MARH TUNEL|EM0602": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EM0602",
+    "cantidad_inicial": 10,
+    "costo_unitario": 2.0
+  },
+  "MARH TUNEL|EQ0458": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "EQ0458",
+    "cantidad_inicial": 1,
+    "costo_unitario": 210.0
+  },
+  "MARH TUNEL|FE0239": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0239",
+    "cantidad_inicial": 4,
+    "costo_unitario": 184.0
+  },
+  "MARH TUNEL|FE0304": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0304",
+    "cantidad_inicial": 20,
+    "costo_unitario": 1.5
+  },
+  "MARH TUNEL|FE0306": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0306",
+    "cantidad_inicial": 7,
+    "costo_unitario": 1.5
+  },
+  "MARH TUNEL|FE0307": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0307",
+    "cantidad_inicial": 56,
+    "costo_unitario": 2.7
+  },
+  "MARH TUNEL|FE0318": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0318",
+    "cantidad_inicial": 12,
+    "costo_unitario": 80.0
+  },
+  "MARH TUNEL|FE0319": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0319",
+    "cantidad_inicial": 1,
+    "costo_unitario": 120.0
+  },
+  "MARH TUNEL|FE0415": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0415",
+    "cantidad_inicial": 2,
+    "costo_unitario": 432.2
+  },
+  "MARH TUNEL|FE0823": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0823",
+    "cantidad_inicial": 1,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|AC1203": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "AC1203",
+    "cantidad_inicial": 13,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|FE0906": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0906",
+    "cantidad_inicial": 18,
+    "costo_unitario": 35.0
+  },
+  "MARH TUNEL|FE0907": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0907",
+    "cantidad_inicial": 333,
+    "costo_unitario": 7.0
+  },
+  "MARH TUNEL|FE0908": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0908",
+    "cantidad_inicial": 8,
+    "costo_unitario": 7.0
+  },
+  "MARH TUNEL|FE0909": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0909",
+    "cantidad_inicial": 108,
+    "costo_unitario": 4.0
+  },
+  "MARH TUNEL|FE0905": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0905",
+    "cantidad_inicial": 10,
+    "costo_unitario": 4.0
+  },
+  "MARH TUNEL|FE0912": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0912",
+    "cantidad_inicial": 8,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|FE0921": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE0921",
+    "cantidad_inicial": 25,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|FE1309": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1309",
+    "cantidad_inicial": 1,
+    "costo_unitario": 45.0
+  },
+  "MARH TUNEL|FE1310A": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1310A",
+    "cantidad_inicial": 3,
+    "costo_unitario": 55.0
+  },
+  "MARH TUNEL|FE1901": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1901",
+    "cantidad_inicial": 4,
+    "costo_unitario": 6.0
+  },
+  "MARH TUNEL|FE1903": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1903",
+    "cantidad_inicial": 4,
+    "costo_unitario": 6.0
+  },
+  "MARH TUNEL|FE1908": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1908",
+    "cantidad_inicial": 1,
+    "costo_unitario": 9.5
+  },
+  "MARH TUNEL|FE1934": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1934",
+    "cantidad_inicial": 2,
+    "costo_unitario": 1.003
+  },
+  "MARH TUNEL|FE1935": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1935",
+    "cantidad_inicial": 175,
+    "costo_unitario": 1.6
+  },
+  "MARH TUNEL|FE1946": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1946",
+    "cantidad_inicial": 1,
+    "costo_unitario": 3.5
+  },
+  "MARH TUNEL|FE1949": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1949",
+    "cantidad_inicial": 2,
+    "costo_unitario": 260.0
+  },
+  "MARH TUNEL|FE1950": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE1950",
+    "cantidad_inicial": 2,
+    "costo_unitario": 70.0
+  },
+  "MARH TUNEL|FE2002": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2002",
+    "cantidad_inicial": 1,
+    "costo_unitario": 500.0
+  },
+  "MARH TUNEL|FE2138": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2138",
+    "cantidad_inicial": 48,
+    "costo_unitario": 19.0
+  },
+  "MARH TUNEL|FE2139": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2139",
+    "cantidad_inicial": 24,
+    "costo_unitario": 13.0
+  },
+  "MARH TUNEL|FE2140": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2140",
+    "cantidad_inicial": 24,
+    "costo_unitario": 25.5
+  },
+  "MARH TUNEL|FE2141": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2141",
+    "cantidad_inicial": 11,
+    "costo_unitario": 30.0
+  },
+  "MARH TUNEL|FE2147": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2147",
+    "cantidad_inicial": 25,
+    "costo_unitario": 1.3
+  },
+  "MARH TUNEL|FE2147A": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2147A",
+    "cantidad_inicial": 18,
+    "costo_unitario": 1.0
+  },
+  "MARH TUNEL|FE2148": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2148",
+    "cantidad_inicial": 7,
+    "costo_unitario": 0.6608055555555556
+  },
+  "MARH TUNEL|FE2352": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2352",
+    "cantidad_inicial": 12,
+    "costo_unitario": 9.977777777777773
+  },
+  "MARH TUNEL|FE2353": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2353",
+    "cantidad_inicial": 8,
+    "costo_unitario": 5.5
+  },
+  "MARH TUNEL|FE2354": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2354",
+    "cantidad_inicial": 3,
+    "costo_unitario": 137.5
+  },
+  "MARH TUNEL|FE2360": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2360",
+    "cantidad_inicial": 8,
+    "costo_unitario": 7.3
+  },
+  "MARH TUNEL|FE2359": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2359",
+    "cantidad_inicial": 0.25,
+    "costo_unitario": 1.0
+  },
+  "MARH TUNEL|FE2401": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2401",
+    "cantidad_inicial": 3,
+    "costo_unitario": 16.0
+  },
+  "MARH TUNEL|FE2416": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2416",
+    "cantidad_inicial": 1,
+    "costo_unitario": 22.0
+  },
+  "MARH TUNEL|FE2423": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2423",
+    "cantidad_inicial": 30,
+    "costo_unitario": 8.0
+  },
+  "MARH TUNEL|FE2424": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2424",
+    "cantidad_inicial": 8,
+    "costo_unitario": 8.0
+  },
+  "MARH TUNEL|FE2425": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2425",
+    "cantidad_inicial": 125,
+    "costo_unitario": 6.0
+  },
+  "MARH TUNEL|FE2426": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2426",
+    "cantidad_inicial": 100,
+    "costo_unitario": 4.0
+  },
+  "MARH TUNEL|FE2427": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2427",
+    "cantidad_inicial": 8,
+    "costo_unitario": 4.0
+  },
+  "MARH TUNEL|FE2502": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2502",
+    "cantidad_inicial": 1,
+    "costo_unitario": 3.2
+  },
+  "MARH TUNEL|FE2506": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2506",
+    "cantidad_inicial": 50,
+    "costo_unitario": 4.5
+  },
+  "MARH TUNEL|FE2556": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2556",
+    "cantidad_inicial": 3,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|FE2551": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE2551",
+    "cantidad_inicial": 68,
+    "costo_unitario": 2.6
+  },
+  "MARH TUNEL|FE3001": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE3001",
+    "cantidad_inicial": 4,
+    "costo_unitario": 3.3
+  },
+  "MARH TUNEL|FE3801": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE3801",
+    "cantidad_inicial": 4,
+    "costo_unitario": 7.67
+  },
+  "MARH TUNEL|FE3805": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE3805",
+    "cantidad_inicial": 2,
+    "costo_unitario": 5.0
+  },
+  "MARH TUNEL|FE4204": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE4204",
+    "cantidad_inicial": 25,
+    "costo_unitario": 11.0
+  },
+  "MARH TUNEL|FE4209": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE4209",
+    "cantidad_inicial": 3,
+    "costo_unitario": 57.0
+  },
+  "MARH TUNEL|FE4221": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE4221",
+    "cantidad_inicial": 2,
+    "costo_unitario": 22.5
+  },
+  "MARH TUNEL|FE5413": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5413",
+    "cantidad_inicial": 2,
+    "costo_unitario": 45.0
+  },
+  "MARH TUNEL|FE5414": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5414",
+    "cantidad_inicial": 1,
+    "costo_unitario": 35.0
+  },
+  "MARH TUNEL|FE5430": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5430",
+    "cantidad_inicial": 4,
+    "costo_unitario": 300.0
+  },
+  "MARH TUNEL|FE5440": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5440",
+    "cantidad_inicial": 3,
+    "costo_unitario": 220.0
+  },
+  "MARH TUNEL|FE5441": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5441",
+    "cantidad_inicial": 1,
+    "costo_unitario": 250.0
+  },
+  "MARH TUNEL|FE5452": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5452",
+    "cantidad_inicial": 1,
+    "costo_unitario": 250.0
+  },
+  "MARH TUNEL|FE5609": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5609",
+    "cantidad_inicial": 1,
+    "costo_unitario": 42.008
+  },
+  "MARH TUNEL|FE5623": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5623",
+    "cantidad_inicial": 3,
+    "costo_unitario": 13.0
+  },
+  "MARH TUNEL|FE5707": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5707",
+    "cantidad_inicial": 2,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|FE5830": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5830",
+    "cantidad_inicial": 20,
+    "costo_unitario": 1.5
+  },
+  "MARH TUNEL|FE5908": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE5908",
+    "cantidad_inicial": 193,
+    "costo_unitario": 0.999
+  },
+  "MARH TUNEL|FE6135": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6135",
+    "cantidad_inicial": 11,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|FE6202": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6202",
+    "cantidad_inicial": 2,
+    "costo_unitario": 43.0
+  },
+  "MARH TUNEL|FE6205": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6205",
+    "cantidad_inicial": 1,
+    "costo_unitario": 43.0
+  },
+  "MARH TUNEL|FE6209": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6209",
+    "cantidad_inicial": 1,
+    "costo_unitario": 43.5
+  },
+  "MARH TUNEL|FE6221": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6221",
+    "cantidad_inicial": 1,
+    "costo_unitario": 42.0
+  },
+  "MARH TUNEL|FE6226": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6226",
+    "cantidad_inicial": 6,
+    "costo_unitario": 42.0
+  },
+  "MARH TUNEL|FE6227": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6227",
+    "cantidad_inicial": 1,
+    "costo_unitario": 44.0
+  },
+  "MARH TUNEL|FE6230": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6230",
+    "cantidad_inicial": 3,
+    "costo_unitario": 42.0
+  },
+  "MARH TUNEL|FE6232": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6232",
+    "cantidad_inicial": 1,
+    "costo_unitario": 42.008
+  },
+  "MARH TUNEL|FE6236": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6236",
+    "cantidad_inicial": 2,
+    "costo_unitario": 43.0
+  },
+  "MARH TUNEL|FE6290": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6290",
+    "cantidad_inicial": 1,
+    "costo_unitario": 8.0
+  },
+  "MARH TUNEL|FE6295": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6295",
+    "cantidad_inicial": 1,
+    "costo_unitario": 7.5
+  },
+  "MARH TUNEL|FE6296": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6296",
+    "cantidad_inicial": 7,
+    "costo_unitario": 8.0
+  },
+  "MARH TUNEL|FE6405": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6405",
+    "cantidad_inicial": 1,
+    "costo_unitario": 45.0
+  },
+  "MARH TUNEL|FE6441": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6441",
+    "cantidad_inicial": 1,
+    "costo_unitario": 45.0
+  },
+  "MARH TUNEL|FE6443": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE6443",
+    "cantidad_inicial": 6,
+    "costo_unitario": 45.0
+  },
+  "MARH TUNEL|FE7852": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE7852",
+    "cantidad_inicial": 10,
+    "costo_unitario": 2.0
+  },
+  "MARH TUNEL|FE8601": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE8601",
+    "cantidad_inicial": 40,
+    "costo_unitario": 2.211375
+  },
+  "MARH TUNEL|FE8815": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE8815",
+    "cantidad_inicial": 3,
+    "costo_unitario": 6.0
+  },
+  "MARH TUNEL|FE8851": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE8851",
+    "cantidad_inicial": 33,
+    "costo_unitario": 2.5
+  },
+  "MARH TUNEL|FE9014": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9014",
+    "cantidad_inicial": 6,
+    "costo_unitario": 50.0
+  },
+  "MARH TUNEL|FE9063": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9063",
+    "cantidad_inicial": 6,
+    "costo_unitario": 5.0
+  },
+  "MARH TUNEL|FE9064": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9064",
+    "cantidad_inicial": 18,
+    "costo_unitario": 4.0
+  },
+  "MARH TUNEL|FE9065": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9065",
+    "cantidad_inicial": 6,
+    "costo_unitario": 22.0
+  },
+  "MARH TUNEL|FE9168": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9168",
+    "cantidad_inicial": 3,
+    "costo_unitario": 62.0
+  },
+  "MARH TUNEL|FE9169": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9169",
+    "cantidad_inicial": 4,
+    "costo_unitario": 520.0
+  },
+  "MARH TUNEL|FE9215": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9215",
+    "cantidad_inicial": 11,
+    "costo_unitario": 350.0
+  },
+  "MARH TUNEL|FE9223": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9223",
+    "cantidad_inicial": 8,
+    "costo_unitario": 8.0
+  },
+  "MARH TUNEL|FE9251": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9251",
+    "cantidad_inicial": 2,
+    "costo_unitario": 520.0
+  },
+  "MARH TUNEL|FE9419": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9419",
+    "cantidad_inicial": 8,
+    "costo_unitario": 120.0
+  },
+  "MARH TUNEL|FE9420": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9420",
+    "cantidad_inicial": 23,
+    "costo_unitario": 165.25
+  },
+  "MARH TUNEL|FE9459": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9459",
+    "cantidad_inicial": 3,
+    "costo_unitario": 33.0
+  },
+  "MARH TUNEL|FE9510": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9510",
+    "cantidad_inicial": 3,
+    "costo_unitario": 4.5
+  },
+  "MARH TUNEL|FE9521": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9521",
+    "cantidad_inicial": 5,
+    "costo_unitario": 2.5
+  },
+  "MARH TUNEL|FE9601": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9601",
+    "cantidad_inicial": 1,
+    "costo_unitario": 15.5
+  },
+  "MARH TUNEL|FE9602": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9602",
+    "cantidad_inicial": 1,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|FE9609": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9609",
+    "cantidad_inicial": 4,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|FE9612": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9612",
+    "cantidad_inicial": 17,
+    "costo_unitario": 7.5
+  },
+  "MARH TUNEL|FE9614": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9614",
+    "cantidad_inicial": 12,
+    "costo_unitario": 7.5
+  },
+  "MARH TUNEL|FE9631": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9631",
+    "cantidad_inicial": 2,
+    "costo_unitario": 1.5
+  },
+  "MARH TUNEL|FE9716": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9716",
+    "cantidad_inicial": 4,
+    "costo_unitario": 83.0
+  },
+  "MARH TUNEL|FE9807": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9807",
+    "cantidad_inicial": 2,
+    "costo_unitario": 140.0
+  },
+  "MARH TUNEL|FE9914": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FE9914",
+    "cantidad_inicial": 8,
+    "costo_unitario": 250.0
+  },
+  "MARH TUNEL|FJ0213": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FJ0213",
+    "cantidad_inicial": 2,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|FJ0215": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FJ0215",
+    "cantidad_inicial": 2,
+    "costo_unitario": 18.5
+  },
+  "MARH TUNEL|FJ0216": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FJ0216",
+    "cantidad_inicial": 7,
+    "costo_unitario": 18.0
+  },
+  "MARH TUNEL|FJ0217": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "FJ0217",
+    "cantidad_inicial": 1,
+    "costo_unitario": 32.0
+  },
+  "MARH TUNEL|GE0306": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "GE0306",
+    "cantidad_inicial": 6,
+    "costo_unitario": 10.0
+  },
+  "MARH TUNEL|HE0401": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE0401",
+    "cantidad_inicial": 12,
+    "costo_unitario": 20.0
+  },
+  "MARH TUNEL|HE0403": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE0403",
+    "cantidad_inicial": 6,
+    "costo_unitario": 27.5
+  },
+  "MARH TUNEL|HE0408": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE0408",
+    "cantidad_inicial": 3,
+    "costo_unitario": 24.6
+  },
+  "MARH TUNEL|HE0431": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE0431",
+    "cantidad_inicial": 1,
+    "costo_unitario": 23.0
+  },
+  "MARH TUNEL|HE0500": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE0500",
+    "cantidad_inicial": 5,
+    "costo_unitario": 33.9
+  },
+  "MARH TUNEL|HE0504": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE0504",
+    "cantidad_inicial": 1,
+    "costo_unitario": 67.8
+  },
+  "MARH TUNEL|HE0802": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE0802",
+    "cantidad_inicial": 1,
+    "costo_unitario": 20.0
+  },
+  "MARH TUNEL|HE0806": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE0806",
+    "cantidad_inicial": 3,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|HE0901": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE0901",
+    "cantidad_inicial": 10,
+    "costo_unitario": 24.0
+  },
+  "MARH TUNEL|HE1002": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1002",
+    "cantidad_inicial": 2,
+    "costo_unitario": 8.0
+  },
+  "MARH TUNEL|HE1004": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1004",
+    "cantidad_inicial": 1,
+    "costo_unitario": 5.0
+  },
+  "MARH TUNEL|HE1005": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1005",
+    "cantidad_inicial": 1,
+    "costo_unitario": 10.0
+  },
+  "MARH TUNEL|HE1102": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1102",
+    "cantidad_inicial": 5,
+    "costo_unitario": 30.4
+  },
+  "MARH TUNEL|HE1103": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1103",
+    "cantidad_inicial": 4,
+    "costo_unitario": 44.3
+  },
+  "MARH TUNEL|HE1201": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1201",
+    "cantidad_inicial": 5,
+    "costo_unitario": 20.0
+  },
+  "MARH TUNEL|HE1220": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1220",
+    "cantidad_inicial": 1,
+    "costo_unitario": 22.0
+  },
+  "MARH TUNEL|HE1225": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1225",
+    "cantidad_inicial": 7,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|HE1228": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1228",
+    "cantidad_inicial": 1,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|HE1301": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1301",
+    "cantidad_inicial": 1,
+    "costo_unitario": 24.45
+  },
+  "MARH TUNEL|HE1404": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1404",
+    "cantidad_inicial": 1,
+    "costo_unitario": 8.0
+  },
+  "MARH TUNEL|HE1507": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1507",
+    "cantidad_inicial": 5,
+    "costo_unitario": 80.0
+  },
+  "MARH TUNEL|HE1511": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1511",
+    "cantidad_inicial": 1,
+    "costo_unitario": 33.0
+  },
+  "MARH TUNEL|HE1514": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1514",
+    "cantidad_inicial": 5,
+    "costo_unitario": 30.0
+  },
+  "MARH TUNEL|HE1519": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1519",
+    "cantidad_inicial": 8,
+    "costo_unitario": 20.0
+  },
+  "MARH TUNEL|HE1522": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1522",
+    "cantidad_inicial": 3,
+    "costo_unitario": 29.7
+  },
+  "MARH TUNEL|HE1531": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1531",
+    "cantidad_inicial": 6,
+    "costo_unitario": 12.3
+  },
+  "MARH TUNEL|HE1831": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE1831",
+    "cantidad_inicial": 1,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|HE2001": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE2001",
+    "cantidad_inicial": 1,
+    "costo_unitario": 22.0
+  },
+  "MARH TUNEL|HE2001B": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE2001B",
+    "cantidad_inicial": 4,
+    "costo_unitario": 32.2
+  },
+  "MARH TUNEL|HE2104": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE2104",
+    "cantidad_inicial": 2,
+    "costo_unitario": 38.8
+  },
+  "MARH TUNEL|HE2203": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE2203",
+    "cantidad_inicial": 3,
+    "costo_unitario": 37.5
+  },
+  "MARH TUNEL|HE2204": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE2204",
+    "cantidad_inicial": 1,
+    "costo_unitario": 33.5
+  },
+  "MARH TUNEL|HE2502": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE2502",
+    "cantidad_inicial": 3,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|HE2504": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE2504",
+    "cantidad_inicial": 1,
+    "costo_unitario": 13.0
+  },
+  "MARH TUNEL|HE2702": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE2702",
+    "cantidad_inicial": 4,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|HE2807": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE2807",
+    "cantidad_inicial": 4,
+    "costo_unitario": 25.4
+  },
+  "MARH TUNEL|HE3101": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE3101",
+    "cantidad_inicial": 2,
+    "costo_unitario": 58.8
+  },
+  "MARH TUNEL|HE9920": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "HE9920",
+    "cantidad_inicial": 6,
+    "costo_unitario": 231.0
+  },
+  "MARH TUNEL|LI0102": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0102",
+    "cantidad_inicial": 3,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|LI0103": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0103",
+    "cantidad_inicial": 4,
+    "costo_unitario": 11.0
+  },
+  "MARH TUNEL|LI0104": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0104",
+    "cantidad_inicial": 6,
+    "costo_unitario": 33.9
+  },
+  "MARH TUNEL|LI0107": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0107",
+    "cantidad_inicial": 1,
+    "costo_unitario": 65.0
+  },
+  "MARH TUNEL|LI0111": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0111",
+    "cantidad_inicial": 3,
+    "costo_unitario": 14.0
+  },
+  "MARH TUNEL|LI0119": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0119",
+    "cantidad_inicial": 1,
+    "costo_unitario": 7.0
+  },
+  "MARH TUNEL|LI0128": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0128",
+    "cantidad_inicial": 2,
+    "costo_unitario": 52.0
+  },
+  "MARH TUNEL|LI0147": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0147",
+    "cantidad_inicial": 5,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|LI0201": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0201",
+    "cantidad_inicial": 9,
+    "costo_unitario": 22.0
+  },
+  "MARH TUNEL|LI0301": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0301",
+    "cantidad_inicial": 27,
+    "costo_unitario": 10.0
+  },
+  "MARH TUNEL|LI0311": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0311",
+    "cantidad_inicial": 19,
+    "costo_unitario": 5.0
+  },
+  "MARH TUNEL|LI0324": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0324",
+    "cantidad_inicial": 10,
+    "costo_unitario": 25.4
+  },
+  "MARH TUNEL|LI0331": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0331",
+    "cantidad_inicial": 2,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|LI0349": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "LI0349",
+    "cantidad_inicial": 3,
+    "costo_unitario": 10.0
+  },
+  "MARH TUNEL|MD0701": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "MD0701",
+    "cantidad_inicial": 9,
+    "costo_unitario": 38.0
+  },
+  "MARH TUNEL|MD0712": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "MD0712",
+    "cantidad_inicial": 10,
+    "costo_unitario": 60.0
+  },
+  "MARH TUNEL|OF0602": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF0602",
+    "cantidad_inicial": 1,
+    "costo_unitario": 8.5
+  },
+  "MARH TUNEL|OF0701": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF0701",
+    "cantidad_inicial": 2,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|OF0901": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF0901",
+    "cantidad_inicial": 2,
+    "costo_unitario": 1.4985
+  },
+  "MARH TUNEL|OF0902": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF0902",
+    "cantidad_inicial": 3,
+    "costo_unitario": 20.0
+  },
+  "MARH TUNEL|OF1501": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF1501",
+    "cantidad_inicial": 2,
+    "costo_unitario": 8.9
+  },
+  "MARH TUNEL|OF1803": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF1803",
+    "cantidad_inicial": 1,
+    "costo_unitario": 4.496
+  },
+  "MARH TUNEL|OF2801": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF2801",
+    "cantidad_inicial": 12,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|OF2902": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF2902",
+    "cantidad_inicial": 3,
+    "costo_unitario": 4.0
+  },
+  "MARH TUNEL|OF3304": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF3304",
+    "cantidad_inicial": 1,
+    "costo_unitario": 25.4
+  },
+  "MARH TUNEL|OF9963": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "OF9963",
+    "cantidad_inicial": 1,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|PR0138": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0138",
+    "cantidad_inicial": 6,
+    "costo_unitario": 70.0
+  },
+  "MARH TUNEL|PR0139": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0139",
+    "cantidad_inicial": 5,
+    "costo_unitario": 68.0
+  },
+  "MARH TUNEL|PR0140": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0140",
+    "cantidad_inicial": 7,
+    "costo_unitario": 68.0
+  },
+  "MARH TUNEL|PR0141": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0141",
+    "cantidad_inicial": 1,
+    "costo_unitario": 70.0
+  },
+  "MARH TUNEL|PR0143": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0143",
+    "cantidad_inicial": 1,
+    "costo_unitario": 70.0
+  },
+  "MARH TUNEL|PR0435": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0435",
+    "cantidad_inicial": 4,
+    "costo_unitario": 75.0
+  },
+  "MARH TUNEL|PR0436": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0436",
+    "cantidad_inicial": 1,
+    "costo_unitario": 75.0
+  },
+  "MARH TUNEL|PR0439": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0439",
+    "cantidad_inicial": 5,
+    "costo_unitario": 86.0
+  },
+  "MARH TUNEL|PR0440": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0440",
+    "cantidad_inicial": 5,
+    "costo_unitario": 86.0
+  },
+  "MARH TUNEL|PR0441": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0441",
+    "cantidad_inicial": 3,
+    "costo_unitario": 86.0
+  },
+  "MARH TUNEL|PR0442": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0442",
+    "cantidad_inicial": 2,
+    "costo_unitario": 75.0
+  },
+  "MARH TUNEL|PR0592": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0592",
+    "cantidad_inicial": 1,
+    "costo_unitario": 220.0
+  },
+  "MARH TUNEL|PR0601": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0601",
+    "cantidad_inicial": 5,
+    "costo_unitario": 125.0
+  },
+  "MARH TUNEL|PR0602": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0602",
+    "cantidad_inicial": 4,
+    "costo_unitario": 125.0
+  },
+  "MARH TUNEL|PR0603": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0603",
+    "cantidad_inicial": 6,
+    "costo_unitario": 125.0
+  },
+  "MARH TUNEL|PR0604": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0604",
+    "cantidad_inicial": 1,
+    "costo_unitario": 125.0
+  },
+  "MARH TUNEL|PR0801": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0801",
+    "cantidad_inicial": 5,
+    "costo_unitario": 71.0
+  },
+  "MARH TUNEL|PR0802": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0802",
+    "cantidad_inicial": 6,
+    "costo_unitario": 71.0
+  },
+  "MARH TUNEL|PR0803": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0803",
+    "cantidad_inicial": 7,
+    "costo_unitario": 78.0
+  },
+  "MARH TUNEL|PR0804": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0804",
+    "cantidad_inicial": 2,
+    "costo_unitario": 95.0
+  },
+  "MARH TUNEL|PR0805": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0805",
+    "cantidad_inicial": 4,
+    "costo_unitario": 85.0
+  },
+  "MARH TUNEL|PR0903": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR0903",
+    "cantidad_inicial": 1,
+    "costo_unitario": 45.0
+  },
+  "MARH TUNEL|PR1001": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR1001",
+    "cantidad_inicial": 1,
+    "costo_unitario": 45.0
+  },
+  "MARH TUNEL|PR1002": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR1002",
+    "cantidad_inicial": 6,
+    "costo_unitario": 45.0
+  },
+  "MARH TUNEL|PR1202": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR1202",
+    "cantidad_inicial": 5,
+    "costo_unitario": 45.0
+  },
+  "MARH TUNEL|PR1203": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR1203",
+    "cantidad_inicial": 5,
+    "costo_unitario": 46.0
+  },
+  "MARH TUNEL|PR1502": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR1502",
+    "cantidad_inicial": 17,
+    "costo_unitario": 30.0
+  },
+  "MARH TUNEL|PR1802": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR1802",
+    "cantidad_inicial": 24,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|PR1803": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR1803",
+    "cantidad_inicial": 26,
+    "costo_unitario": 10.0
+  },
+  "MARH TUNEL|PR1804": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR1804",
+    "cantidad_inicial": 28,
+    "costo_unitario": 10.0
+  },
+  "MARH TUNEL|PR2101": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2101",
+    "cantidad_inicial": 8,
+    "costo_unitario": 13.3
+  },
+  "MARH TUNEL|PR2104": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2104",
+    "cantidad_inicial": 26,
+    "costo_unitario": 6.0
+  },
+  "MARH TUNEL|PR2106": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2106",
+    "cantidad_inicial": 16,
+    "costo_unitario": 23.0
+  },
+  "MARH TUNEL|PR2109": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2109",
+    "cantidad_inicial": 3,
+    "costo_unitario": 20.5
+  },
+  "MARH TUNEL|PR2111": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2111",
+    "cantidad_inicial": 4,
+    "costo_unitario": 3.0
+  },
+  "MARH TUNEL|PR2112": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2112",
+    "cantidad_inicial": 11,
+    "costo_unitario": 24.0
+  },
+  "MARH TUNEL|PR2113": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2113",
+    "cantidad_inicial": 89,
+    "costo_unitario": 9.0
+  },
+  "MARH TUNEL|PR2115": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2115",
+    "cantidad_inicial": 20,
+    "costo_unitario": 13.0
+  },
+  "MARH TUNEL|PR2124": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2124",
+    "cantidad_inicial": 22,
+    "costo_unitario": 13.0
+  },
+  "MARH TUNEL|PR2127": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2127",
+    "cantidad_inicial": 3,
+    "costo_unitario": 98.0
+  },
+  "MARH TUNEL|PR2128": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2128",
+    "cantidad_inicial": 8,
+    "costo_unitario": 5.0
+  },
+  "MARH TUNEL|PR2201": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2201",
+    "cantidad_inicial": 31,
+    "costo_unitario": 4.8025
+  },
+  "MARH TUNEL|PR2202": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2202",
+    "cantidad_inicial": 19,
+    "costo_unitario": 6.0
+  },
+  "MARH TUNEL|PR2203": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2203",
+    "cantidad_inicial": 14,
+    "costo_unitario": 18.0
+  },
+  "MARH TUNEL|PR2204": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2204",
+    "cantidad_inicial": 11,
+    "costo_unitario": 13.995
+  },
+  "MARH TUNEL|PR2301": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2301",
+    "cantidad_inicial": 98,
+    "costo_unitario": 2.2
+  },
+  "MARH TUNEL|PR2401": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2401",
+    "cantidad_inicial": 11,
+    "costo_unitario": 120.0
+  },
+  "MARH TUNEL|PR2402": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2402",
+    "cantidad_inicial": 6,
+    "costo_unitario": 95.0
+  },
+  "MARH TUNEL|PR2501": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2501",
+    "cantidad_inicial": 12,
+    "costo_unitario": 34.5
+  },
+  "MARH TUNEL|PR2502": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2502",
+    "cantidad_inicial": 5,
+    "costo_unitario": 38.002
+  },
+  "MARH TUNEL|PR2504": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2504",
+    "cantidad_inicial": 32,
+    "costo_unitario": 27.0
+  },
+  "MARH TUNEL|PR2602": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2602",
+    "cantidad_inicial": 7,
+    "costo_unitario": 20.0
+  },
+  "MARH TUNEL|PR2701": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2701",
+    "cantidad_inicial": 14,
+    "costo_unitario": 17.0
+  },
+  "MARH TUNEL|PR2703": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2703",
+    "cantidad_inicial": 15,
+    "costo_unitario": 17.0
+  },
+  "MARH TUNEL|PR2801": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2801",
+    "cantidad_inicial": 53,
+    "costo_unitario": 13.0
+  },
+  "MARH TUNEL|PR2811": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR2811",
+    "cantidad_inicial": 42,
+    "costo_unitario": 1.9
+  },
+  "MARH TUNEL|PR3001": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3001",
+    "cantidad_inicial": 17,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|PR3101": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3101",
+    "cantidad_inicial": 11,
+    "costo_unitario": 18.0
+  },
+  "MARH TUNEL|PR3112": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3112",
+    "cantidad_inicial": 1,
+    "costo_unitario": 30.0
+  },
+  "MARH TUNEL|PR3201": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3201",
+    "cantidad_inicial": 11,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|PR3202": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3202",
+    "cantidad_inicial": 14,
+    "costo_unitario": 9.0
+  },
+  "MARH TUNEL|PR3301": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3301",
+    "cantidad_inicial": 14,
+    "costo_unitario": 3.2495
+  },
+  "MARH TUNEL|PR3413": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3413",
+    "cantidad_inicial": 9,
+    "costo_unitario": 4.0
+  },
+  "MARH TUNEL|PR3414": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3414",
+    "cantidad_inicial": 1,
+    "costo_unitario": 235.0005
+  },
+  "MARH TUNEL|PR3416": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3416",
+    "cantidad_inicial": 1,
+    "costo_unitario": 46.0
+  },
+  "MARH TUNEL|PR3424": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3424",
+    "cantidad_inicial": 4,
+    "costo_unitario": 12.0
+  },
+  "MARH TUNEL|PR3425": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3425",
+    "cantidad_inicial": 4,
+    "costo_unitario": 10.0
+  },
+  "MARH TUNEL|PR3431": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3431",
+    "cantidad_inicial": 1,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|PR3443": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR3443",
+    "cantidad_inicial": 3,
+    "costo_unitario": 130.0
+  },
+  "MARH TUNEL|PR5001": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5001",
+    "cantidad_inicial": 1,
+    "costo_unitario": 85.0
+  },
+  "MARH TUNEL|PR5004": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5004",
+    "cantidad_inicial": 1,
+    "costo_unitario": 120.0
+  },
+  "MARH TUNEL|PR5102": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5102",
+    "cantidad_inicial": 3,
+    "costo_unitario": 230.0
+  },
+  "MARH TUNEL|PR5105": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5105",
+    "cantidad_inicial": 1,
+    "costo_unitario": 65.0
+  },
+  "MARH TUNEL|PR5106": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5106",
+    "cantidad_inicial": 1,
+    "costo_unitario": 15.0
+  },
+  "MARH TUNEL|PR5107": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5107",
+    "cantidad_inicial": 1,
+    "costo_unitario": 16.0
+  },
+  "MARH TUNEL|PR5108": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5108",
+    "cantidad_inicial": 1,
+    "costo_unitario": 25.0
+  },
+  "MARH TUNEL|PR5111": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5111",
+    "cantidad_inicial": 12,
+    "costo_unitario": 17.0
+  },
+  "MARH TUNEL|PR5138": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5138",
+    "cantidad_inicial": 2,
+    "costo_unitario": 174.0
+  },
+  "MARH TUNEL|PR5301": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5301",
+    "cantidad_inicial": 2,
+    "costo_unitario": 39.0
+  },
+  "MARH TUNEL|PR5302": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5302",
+    "cantidad_inicial": 2,
+    "costo_unitario": 22.0
+  },
+  "MARH TUNEL|PR5308": {
+    "warehouse": "MARH TUNEL",
+    "codigo": "PR5308",
+    "cantidad_inicial": 1,
+    "costo_unitario": 492.6
+  }
+}

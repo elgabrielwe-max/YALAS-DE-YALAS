@@ -1,0 +1,487 @@
+{
+  "source": "ESTATUS PERSONAL DE INGRESO TRANSPORTE DE RELAVES, hoja 14-09-2026",
+  "client": "MINERA CHINALCO PERU S.A.A.",
+  "area": "",
+  "people": [
+    {
+      "dni": "41890819",
+      "nombre": "AYALA FLORES YONG FREDDY",
+      "cargo": "RESIDENTE",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72368771",
+      "nombre": "MAYTA LOVATON MERCEDES IANEL",
+      "cargo": "JEFE DE COSTOS",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72866512",
+      "nombre": "ZEVALLOS YAPIAS JENNIFER",
+      "cargo": "ADMINISTRADORA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "71969349",
+      "nombre": "ENCISO CAJACHAGUA CRISTIAN MIGUEL",
+      "cargo": "ASISTENTE LOGÍSTICO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72611683",
+      "nombre": "JAUREGUI CASTRO YURICO DEL CARMEN",
+      "cargo": "ASISTENTE ADMINISTRATIVO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "44550461",
+      "nombre": "VEGA DE LA CALLE LUIS ALBERTO",
+      "cargo": "JEFE SSOMA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "73141946",
+      "nombre": "MARCAÑAUPA MATINEZ ISMAEL",
+      "cargo": "INGENIERO SSOMA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "45351228",
+      "nombre": "PARRA SALAZAR JAIME  JORGE",
+      "cargo": "INGENIERO SSOMA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "45625196",
+      "nombre": "JULCA SALAS RONALD TEODORO",
+      "cargo": "SUPERVISOR OPERATIVO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72659265",
+      "nombre": "CASTILLO REYES JHANE VALERIA",
+      "cargo": "ASISTENTE SOCIAL",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "41100619",
+      "nombre": "CASO RAMOS ROSMEL DANIEL",
+      "cargo": "TOPÓGRAFO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "75103789",
+      "nombre": "PIMENTEL CORDOVA UZIEL ABIDAN",
+      "cargo": "TOPÓGRAFO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "74291485",
+      "nombre": "ROMERO SANCHEZ KEVIN",
+      "cargo": "AYUDANTE TOPOGRAFO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "62978518",
+      "nombre": "GÓMEZ TIBURCIO ALVARO RAÚL",
+      "cargo": "AYUDANTE TOPOGRAFO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "47843042",
+      "nombre": "CASTRO ORTIZ GIANCARLO ALEXI",
+      "cargo": "OP. DE RODILLO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "71410677",
+      "nombre": "SAYRITUPAC MEJIA JERIMY JHANPIR",
+      "cargo": "OP. DE RODILLO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "47090719",
+      "nombre": "RAMOS OLIVAR JHON AUGUSTO",
+      "cargo": "OP. MOTONIVELADORA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72259789",
+      "nombre": "OSCANOA ESPINOZA AMILCAR MARCO",
+      "cargo": "OP. CARGADOR FRONTAL",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "41747518",
+      "nombre": "BAUTISTA CAMPOS MIGUEL ANGEL",
+      "cargo": "OP. CARGADOR FRONTAL",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "61789525",
+      "nombre": "SINCHE SALAZAR PEDRO LUIS",
+      "cargo": "OPERADOR DE TRACTOR ORUGA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "44280250",
+      "nombre": "SINCHE SALAZAR ISAIAS JOSE",
+      "cargo": "OPERADOR DE TRACTOR ORUGA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "43564358",
+      "nombre": "ESTEBAN ÑAUPARI FRANLIKN",
+      "cargo": "OP. DE VOLQUETE",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "21124983",
+      "nombre": "ZAPATERO MAYTA WALTER LEONCIO",
+      "cargo": "OP. DE VOLQUETE",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "42618566",
+      "nombre": "ROJAS CHANCHA JOSE CARLOS",
+      "cargo": "OP. DE VOLQUETE",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "40788762",
+      "nombre": "DOMINGUEZ ESPINOZA JOEL RAFAEL",
+      "cargo": "OP. DE VOLQUETE",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "46192333",
+      "nombre": "TINEO BARBOZA ROLANDO ESLATEKH",
+      "cargo": "OP. DE VOLQUETE",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "46262781",
+      "nombre": "ACUÑA ARIAS GILVER",
+      "cargo": "OP. DE VOLQUETE",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "44726283",
+      "nombre": "ZAPATERO MAYTA JORGE NESTOR",
+      "cargo": "OP. DE VOLQUETE",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "44782071",
+      "nombre": "QUISPE SULLCARAY EUSEBIO",
+      "cargo": "OP. DE VOLQUETE",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "42219303",
+      "nombre": "LUCAS GUERRA JANO ABRAHAM",
+      "cargo": "OP. CISTERNA DE AGUA 5000 GLN",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "42404083",
+      "nombre": "INGA LADERA JUAN JOSE",
+      "cargo": "OP. CISTERNA DE AGUA 5000 GLN",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "47738568",
+      "nombre": "LABAN JIMENEZ FRANKLIN",
+      "cargo": "OP. CISTERNA DE AGUA 5000 GLN",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72007368",
+      "nombre": "FIGUEROA RICALDI LENYNS DAVID",
+      "cargo": "CONDUCTOR DE CAMIONETA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "41475908",
+      "nombre": "DE LA CRUZ RISCO RAUL",
+      "cargo": "CONDUCTOR DE CAMIONETA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "76734296",
+      "nombre": "LAZO ESPIRITU ULISES FRANKLIN",
+      "cargo": "CONDUCTOR DE CAMIONETA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "47628719",
+      "nombre": "ESPINOZA RODRIGUEZ JHON BRIAN",
+      "cargo": "CONDUCTOR DE MINIBUS",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "44747332",
+      "nombre": "MORA CASTILLO LUIS JESUS",
+      "cargo": "CONDUCTOR DE CAMIONETA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "73982581",
+      "nombre": "DELGADILLO FERREL ANTHONY",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "76830484",
+      "nombre": "MACHACUAY MIRANDA CAMILA CYNTHIA",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72489386",
+      "nombre": "CONTRERAS VILLEGAS MAELY STEFFY",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "74944893",
+      "nombre": "QUISPE DELGADILLO JEANPIERRE JHONY",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "71209786",
+      "nombre": "JULCA CARDENAS LIDER",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "47355607",
+      "nombre": "MERCADO SALCEDO WILBER",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "71724164",
+      "nombre": "POMA CASO JEANPIERE",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "60005373",
+      "nombre": "BARJA ORE PATRIK",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "70053634",
+      "nombre": "YACSAHUAMANGA PURIZAGA BRAYAM",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "76688161",
+      "nombre": "HUAMANCULI ALCA LUIS",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "40917601",
+      "nombre": "MARTEL FERNANDEZ BRANDON ROBERT",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "76065681",
+      "nombre": "LOPEZ AGUIRRE STEVEN ALEXANDER",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72267913",
+      "nombre": "SEGAMA HUAMAN EDWIN ANTONIO",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "75179571",
+      "nombre": "GUTIERREZ GARCIA FELIX",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72517162",
+      "nombre": "QUISPE TAIPE JEFERSON ELISEO",
+      "cargo": "VIGIA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "73116538",
+      "nombre": "SOLIS GONZALES OVER LENIN",
+      "cargo": "AYUDANTE DE CISTERNA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "46651742",
+      "nombre": "PINCHI SALAS GERLIN",
+      "cargo": "AYUDANTE DE CISTERNA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72256201",
+      "nombre": "LOZANO ORIHUELA WALDIR",
+      "cargo": "AYUDANTE DE CISTERNA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "73270036",
+      "nombre": "ROSAS TAYPE CARLOS MANUEL",
+      "cargo": "AYUDANTE DE CISTERNA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "72558386",
+      "nombre": "ESPIRITU BALDEON LUIS GEORGE",
+      "cargo": "AYUDANTE DE CISTERNA",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "71773154",
+      "nombre": "DIEGO GUERE VICTOR MANUEL",
+      "cargo": "TÉCNICO MECÁNICO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "74427050",
+      "nombre": "TRINIDAD BRAVO WILLY",
+      "cargo": "TÉCNICO MECÁNICO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    },
+    {
+      "dni": "74572189",
+      "nombre": "TORRES VILLAVERDE BREYNER HUGO",
+      "cargo": "TÉCNICO MECÁNICO",
+      "cliente": "MINERA CHINALCO PERU S.A.A.",
+      "area": null,
+      "activo": true
+    }
+  ]
+}

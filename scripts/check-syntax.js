@@ -1,0 +1,2 @@
+import {execFileSync} from 'node:child_process';import {readdirSync,statSync} from 'node:fs';import {join} from 'node:path';
+function walk(d){let out=[];for(const n of readdirSync(d)){const p=join(d,n);if(n==='node_modules'||n.startsWith('.'))continue;const s=statSync(p);if(s.isDirectory())out.push(...walk(p));else if(n.endsWith('.js'))out.push(p)}return out}for(const f of walk('.'))execFileSync(process.execPath,['--check',f],{stdio:'inherit'});console.log('Sintaxis OK');

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#142b3c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="SILOG">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="apple-touch-icon" href="/icon-192.png">
+<title>SILOG 1.8.6 · Gestión Logística</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="loginScreen" class="loginScreen hidden">
+ <div class="loginCard">
+  <div class="loginBrand">SILOG<small>Sistema Integral de Gestión Logística</small></div>
+  <h1>Iniciar sesión</h1>
+  <p>Ingresa con tu usuario autorizado.</p>
+  <form id="loginForm">
+   <label>Usuario<input id="loginUsername" name="username" autocomplete="username" required autofocus></label>
+   <label>Contraseña<input id="loginPassword" name="password" type="password" autocomplete="current-password" required></label>
+   <div id="loginError" class="loginError"></div>
+   <button class="primary" type="submit">Ingresar a SILOG</button>
+  </form>
+  <small class="loginHelp">El acceso queda registrado por usuario y las operaciones se auditan.</small>
+ </div>
+</div>
+<aside>
+ <div class="brand">SILOG<small>Sistema Integral de Gestión Logística</small></div>
+ <nav>
+  <button data-page="dashboard" class="active">Dashboard</button>
+  <button data-page="materials">Maestro de materiales</button>
+  <button data-page="income">Ingresos</button>
+  <button data-page="outflow">Salidas</button>
+  <button data-page="loans">Préstamos <span id="loanNavBadge" class="loan-nav-badge hidden"></span></button>
+  <button data-page="scanner">Escáner</button>
+  <button data-page="inventory">Inventario</button>
+  <button data-page="kits">Kits</button>
+  <button data-page="transfers">Transferencias</button>
+  <button data-page="reconciliation">Conciliación física</button>
+  <button data-page="data">DATA cargada</button>
+  <button data-page="people">Personal</button>
+  <button data-page="workerKardex">Kardex por trabajador</button>
+  <button data-page="users">Usuarios</button>
+  <button data-page="export">Descargar recursos</button>
+  <button data-page="audit">Auditoría</button>
+ </nav>
+ <div class="side-note">SILOG 1.8.4 · Gestión empresarial · Trazabilidad</div>
+</aside>
+<main>
+<header><div><b id="pageTitle">Dashboard</b><span id="health">●</span><span id="lastSync"></span></div><div class="user"><span id="currentUser">—</span> <button id="logoutBtn" class="secondary logoutBtn" type="button">Cerrar sesión</button></div></header>
+
+<section id="dashboard" class="page">
+ <div class="dashboard-hero">
+  <div class="hero-copy"><span class="hero-eyebrow"><i></i> CENTRO DE CONTROL LOGÍSTICO</span><h1>Controla tu operación.<br><em>Decide con información.</em></h1><p>Inventario, movimientos, costos y alertas en una sola vista operativa.</p></div>
+  <div class="hero-mark" aria-hidden="true"><div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div><div class="hero-core"><span>SL</span></div><div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div></div>
+  <div class="hero-foot"><span><b>01</b> INVENTARIO</span><span><b>02</b> TRAZABILIDAD</span><span><b>03</b> COSTOS REALES</span></div>
+ </div>
+ <div class="toolbar wrap dashboardFilters"><label>Almacén del dashboard<select id="dashboardWarehouse"><option value="">Todos los almacenes</option></select></label><button type="button" class="secondary" onclick="loadDash()">Actualizar indicadores</button></div>
+ <div class="quick-actions panel" aria-label="Accesos rápidos">
+  <div class="quick-actions-copy"><span class="eyebrow">OPERACIÓN DIARIA</span><h2>Accesos rápidos</h2><p>Inicia las tareas frecuentes sin recorrer el menú.</p></div>
+  <div class="quick-actions-buttons">
+   <button type="button" class="quick-action" data-quick-page="income"><span class="quick-action-icon">＋</span><span><b>Registrar ingreso</b><small>Entrada de materiales</small></span><span class="quick-arrow">↗</span></button>
+   <button type="button" class="quick-action" data-quick-page="outflow"><span class="quick-action-icon">↗</span><span><b>Registrar salida</b><small>Entrega de materiales</small></span><span class="quick-arrow">↗</span></button>
+   <button type="button" class="quick-action" data-quick-page="inventory"><span class="quick-action-icon">▦</span><span><b>Consultar inventario</b><small>Stock por almacén</small></span><span class="quick-arrow">↗</span></button>
+   <button type="button" class="quick-action" data-quick-page="loans"><span class="quick-action-icon">↔</span><span><b>Gestionar préstamos</b><small>Entrega y devolución</small><span id="quickLoanStatus" class="quick-status">Control de préstamos</span></span><span class="quick-arrow">↗</span></button>
+  </div>
+ </div>
+ <div class="section-kicker"><span>RESUMEN EJECUTIVO</span><small>Indicadores según el filtro seleccionado</small></div>
+ <div class="cards six">
+  <div><span>Materiales</span><strong id="mCount">—</strong><small>maestro activo</small></div>
+  <div><span>Valor inventario</span><strong id="invValue">—</strong><small>valor actual</small></div>
+  <div><span>Salidas del mes</span><strong id="outValue">—</strong><small id="outCount">— movimientos</small></div>
+  <div><span>Ingresos del mes</span><strong id="inValue">—</strong><small id="inCount">— movimientos</small></div>
+  <div><span>Stock negativo</span><strong id="negCount">—</strong><small>requiere revisión</small></div>
+  <div><span>Stock crítico</span><strong id="critCount">—</strong><small>mínimos configurados</small></div>
+ </div>
+ <div class="section-kicker charts-kicker"><span>ANÁLISIS Y TENDENCIAS</span><small>Los gráficos se alimentan de los registros del sistema</small></div>
+ <div class="dashgrid">
+  <div class="panel chartpanel"><div class="panelhead"><h2>Movimientos valorizados</h2><span>Últimos 6 meses</span></div><div id="monthlyChart" class="chart"></div></div>
+  <div class="panel chartpanel"><div class="panelhead"><h2>Valor por grupo</h2><span>Inventario actual</span></div><div id="groupChart" class="bars"></div></div>
+ </div>
+ <div class="dashgrid">
+  <div class="panel chartpanel"><div class="panelhead"><h2>Costos diarios por almacén</h2><span>Últimos 14 días · salidas valorizadas</span></div><div id="dailyCostsChart" class="chart"></div></div>
+  <div class="panel chartpanel"><div class="panelhead"><h2>Comparativo por almacén</h2><span>Salidas del mes actual</span></div><div id="warehouseCompareChart" class="bars"></div></div>
+ </div>
+ <div class="dashgrid">
+  <div class="panel"><div class="panelhead"><h2>Materiales de mayor costo de consumo</h2><span>Mes actual</span></div><div id="topConsumption"></div></div>
+  <div class="panel"><div class="panelhead"><h2>Análisis automático</h2><span>Según datos disponibles</span></div><div id="analysis" class="analysis"></div></div>
+ </div>
+ <div class="dashgrid">
+  <div class="panel"><div class="panelhead"><h2>Alertas de inventario</h2><span>Stock negativo, crítico, sin costo o sobrestock</span></div><div id="dashboardAlerts" class="tablewrap"><div class="empty">Consultando alertas…</div></div></div>
+  <div class="panel"><div class="panelhead"><h2>Estado de integridad de datos</h2><span>Solo lectura</span></div><div id="systemDiagnostics" class="analysis">Validando movimientos y saldos…</div></div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Presupuesto mensual por almacén</h2><span>Configurable por ADMIN / SUPERVISOR</span></div>
+  <form id="budgetForm" class="gridform"><label>Mes<input type="month" id="budgetPeriod" required></label><label>Almacén<select id="budgetWarehouse" required></select></label><label>Presupuesto mensual (S/)<input type="number" id="budgetAmount" min="0" step="0.01" required></label><button class="primary" type="submit">Guardar presupuesto</button></form>
+  <div id="budgetSummary" class="report-summary">El presupuesto se compara con las salidas valorizadas del mes.</div>
+  <div class="tablewrap"><table><thead><tr><th>Almacén</th><th>Presupuesto (S/)</th><th>Consumo del mes (S/)</th><th>Disponible (S/)</th><th>Ejecución</th></tr></thead><tbody id="budgetBody"><tr><td colspan="5" class="empty">Sin datos.</td></tr></tbody></table></div>
+ </div>
+</section>
+
+<section id="materials" class="page hidden">
+ <div class="toolbar wrap"><input id="matSearch" placeholder="Buscar por código, código anterior o nombre" onkeydown="if(event.key==='Enter')loadMaterials()"><select id="matGroup"><option value="">Todos los grupos</option></select><select id="matFamily"><option value="">Todas las familias</option></select><select id="matStatus"><option value="">Todos los estados</option><option value="WITH_STOCK">Con stock</option><option value="ZERO">Sin stock</option><option value="CRITICAL">Crítico</option><option value="NEGATIVE">Negativo</option></select><button type="button" onclick="loadMaterials()">Buscar</button><button type="button" class="primary" id="toggleNewMaterial">＋ Registrar nuevo material</button></div>
+ <div class="panel hidden" id="newMaterialPanel"><div class="panelhead"><h2>Registrar nuevo material</h2><span>Se agrega al Maestro sin crear stock</span></div><form id="newMaterialForm" class="gridform">
+  <label>Código nuevo *<input name="codigo" maxlength="80" required></label><label>Código anterior<input name="codigo_anterior" maxlength="80"></label><label>Descripción del material *<input name="descripcion" maxlength="250" required></label><label>Unidad de medida<input name="unidad" value="UND" maxlength="20" required></label>
+  <label>Código de grupo<input name="grupo_codigo" value="GEN" maxlength="30" required></label><label>Nombre del grupo<input name="grupo_nombre" value="GENERAL" maxlength="120" required></label><label>Código de familia<input name="familia_codigo" value="00" maxlength="30" required></label><label>Nombre de familia<input name="familia_nombre" value="GENERAL" maxlength="120" required></label>
+  <label>Moneda<select name="moneda"><option value="SOL">Soles (S/)</option><option value="DOL">Dólares (US$)</option></select></label><label>Costo referencial<input name="costo_referencia" type="number" min="0" step="0.0001" value="0"></label><label>Ubicación (opcional)<input name="ubicacion" maxlength="150"></label><div class="formactions"><button class="primary" type="submit">Guardar material</button><button class="secondary" type="button" id="cancelNewMaterial">Cancelar</button></div><p class="muted">El material se crea sin stock. Para que aparezca en las salidas, primero registra su ingreso en el almacén correspondiente.</p>
+ </form></div>
+ <div class="panel"><div class="panelhead"><h2>Maestro de materiales</h2><span id="matCountLabel"></span></div><div class="tablewrap"><table><thead><tr><th>Código</th><th>Producto</th><th>Grupo</th><th>Familia</th><th>U/M</th><th>Stock</th><th>Costo prom.</th><th>Valor</th><th>Ubicación</th></tr></thead><tbody id="materialsBody"></tbody></table></div></div>
+</section>
+
+<section id="income" class="page hidden">
+ <div class="panel"><div class="panelhead"><h2>Registrar ingreso de materiales</h2><span>Actualiza stock y costo promedio</span></div>
+  <form id="incomeForm" class="gridform">
+   <label>Fecha de atención<input type="date" name="fecha_atencion" required></label>
+   <label>Fecha de digitación<input type="date" name="fecha_digitacion" readonly required></label>
+   <label>Almacén<select name="almacen" id="incomeWh" required></select></label>
+   <label>Producto / código<input name="codigo" id="incomeCode" list="materialList" placeholder="Escribe nombre o código" required></label>
+   <label>Cantidad<input type="number" step="0.0001" min="0.0001" name="cantidad" required></label>
+   <label>Costo unitario<input type="number" step="0.000001" min="0" name="costo_unitario" required></label>
+   <label>Moneda<select name="moneda"><option>SOL</option><option>DOL</option></select></label>
+   <label>Documento<input name="documento" placeholder="OC / FACTURA / GUIA"></label>
+   <label>RUC del proveedor<input name="proveedor_ruc" inputmode="numeric" maxlength="11" pattern="[0-9]{11}" placeholder="RUC de 11 dígitos"></label>
+   <label>Proveedor / razón social<input name="proveedor" placeholder="Nombre del proveedor"></label>
+   <label>Observación<input name="observacion"></label>
+   <button class="primary">Registrar ingreso</button>
+  </form>
+  <div id="incomePreview" class="preview"></div>
+ </div>
+</section>
+
+<section id="scanner" class="page hidden">
+ <div class="panel scannerPanel">
+  <div class="panelhead"><div><h2>Escáner móvil</h2><span id="scannerModeLabel">Consulta / salida · usa la cámara del iPhone</span></div><button type="button" class="secondary" onclick="show('outflow')">Ir a Salidas</button></div>
+  <div class="scannerControls">
+   <label>Almacén<select id="scannerWarehouse"></select></label>
+   <label id="scannerMaterialWrap" class="hidden">Material a cargar<input id="scannerMaterialSearch" placeholder="Escribe código o nombre del Maestro" autocomplete="off"><div id="scannerMaterialSuggestions" class="product-suggestions hidden"></div></label>
+   <button type="button" class="primary" id="scannerStart">▶ Activar cámara</button>
+   <button type="button" class="secondary" id="scannerStop">■ Detener</button>
+   <button type="button" class="secondary" id="scannerTorch"> Linterna</button>
+  </div>
+  <div class="inventoryScanBanner"><b>Actualización de inventario por almacén</b><span>Selecciona el almacén, escanea el producto y SILOG asignará automáticamente el nombre, código, unidad y costo desde el Maestro.</span></div>
+  <div class="scannerViewport"><video id="scannerVideo" playsinline muted></video><div class="scanFrame"></div><div id="scannerStatus" class="scannerStatus">Pulsa «Activar cámara» y apunta al código de barras.</div></div>
+  <div id="scannerLoadSummary" class="hidden"></div>
+  <div class="scannerManual"><input id="scannerManualCode" placeholder="También puedes escribir/pegar un código"><button type="button" onclick="processScannerManualCode()">Buscar</button></div>
+  <div id="scannerResult" class="scannerResult empty">Aún no se ha escaneado ningún producto.</div>
+ </div>
+</section>
+
+<section id="outflow" class="page hidden">
+ <div class="panel"><div class="panelhead"><h2>Salida de materiales</h2><span>Formulario inteligente · similar a DATA</span></div>
+  <form id="outflowForm">
+   <div class="gridform">
+    <label>Fecha de atención<input type="date" name="fecha_atencion" required></label>
+    <label>Fecha de digitación<input type="date" name="fecha_digitacion" readonly required></label>
+    <label>Almacén<select name="almacen" id="outWh" required></select></label>
+    <label>DNI del trabajador<input name="dni" id="outDni" list="peopleList" placeholder="Escribe DNI" required></label>
+    <label>Solicitante<input name="solicitante" id="outPerson" readonly></label>
+    <label>Centro de costo<select name="ceco_id" id="outCeco" required></select></label>
+    <label>Cliente<input name="cliente" id="outCliente" value="MINERA CHINALCO PERU S.A.A." readonly></label>
+    <label>Área<input name="area" id="outArea" placeholder="Escribe el área"></label>
+    <label>Placa / códigos de productos<input name="placa" id="outPlaca" placeholder="Se completa con los códigos seleccionados"></label>
+    <label>Entregado<input name="entregado"></label>
+    <label>Autorizado<input name="autorizado"></label>
+    <label>Condición<select name="condicion"><option>SALIDA</option><option>CONSUMO</option><option>PROYECTO</option><option>REPOSICIÓN</option></select></label>
+    <label>Observación<input name="observacion"></label>
+   </div>
+   <div id="issueWarnings" class="issueWarnings"></div><div class="sectionline"><h3>Materiales a entregar</h3><div><button type="button" class="secondary" onclick="openScannerForOutflow()">Escanear desde iPhone</button> <button type="button" class="secondary" onclick="addIssueRow()">＋ Agregar material</button></div></div>
+   <div class="tablewrap outflow-materials-wrap"><table class="issueTable"><thead><tr><th style="width:34%">Producto / código</th><th>Unidad</th><th>Stock</th><th>Cantidad</th><th>Costo</th><th>Total</th><th></th></tr></thead><tbody id="issueItems"></tbody></table></div>
+   <div class="issueTotal"><span>Total salida</span><strong id="issueGrandTotal">S/ 0.00</strong></div>
+   <button class="primary" type="submit">Confirmar salida</button>
+  </form>
+ </div>
+</section>
+
+<section id="kits" class="page hidden">
+ <div class="section-kicker"><span>ARMADO Y CONTROL DE KITS</span><small>Definiciones y existencias separadas por almacén</small></div>
+ <div class="panel"><div class="panelhead"><h2>Registrar nuevo kit</h2><span>Los componentes se descuentan solo al armar el kit</span></div>
+ <form id="kitCreateForm" class="gridform">
+  <label>Código del kit *<input name="codigo" maxlength="60" required placeholder="Ej. KIT-PARADA-01"></label>
+  <label>Nombre del kit *<input name="nombre" maxlength="150" required placeholder="Ej. Kit parada de planta"></label>
+  <label style="grid-column:1/-1">Descripción / proyecto<input name="descripcion" maxlength="250" placeholder="Ej. Equipos de protección para parada de planta"></label>
+  <label style="grid-column:1/-1">Componentes *<textarea name="componentes" rows="5" required placeholder="Un material por línea, formato: CODIGO; CANTIDAD
+PR2301; 2
+BOTAS-001; 1"></textarea><small class="muted">Usa el código exacto del Maestro y la cantidad necesaria por cada kit.</small></label>
+  <button class="primary" type="submit">Guardar definición del kit</button>
+ </form><div id="kitCreateStatus" class="report-summary">Primero registra el kit y sus componentes; luego podrás armarlo en el almacén elegido.</div></div>
+ <div class="panel"><div class="panelhead"><h2>Existencias de kits</h2><span>Filtrado por almacén</span></div><div class="toolbar wrap"><label>Almacén<select id="kitsWarehouse"></select></label><button type="button" class="secondary" id="refreshKits">Actualizar kits</button></div>
+ <div class="tablewrap"><table><thead><tr><th>Código</th><th>Kit / descripción</th><th>Componentes</th><th>Stock en almacén</th><th>Valor</th><th>Armar / entregar</th></tr></thead><tbody id="kitsBody"><tr><td colspan="6" class="empty">Cargando kits…</td></tr></tbody></table></div></div>
+</section>
+
+<section id="inventory" class="page hidden">
+ <div class="toolbar wrap"><input id="invSearch" placeholder="Buscar material"><select id="invWarehouse"><option value="">Todos los almacenes</option></select><select id="invStatus"><option value="">Todos los estados</option><option value="WITH_STOCK">Con stock</option><option value="ZERO">Sin stock</option><option value="CRITICAL">Crítico</option><option value="NEGATIVE">Negativo</option></select><button onclick="loadInventory()">Actualizar</button><button class="primary" type="button" id="openCreateWarehouse">＋ Crear almacén</button><button class="secondary" onclick="openManualInventoryEntry()">＋ Ingreso manual por Maestro</button><button class="danger-button" type="button" onclick="openClearWarehouse()"> Vaciar stock de almacén</button><button class="secondary" onclick="openInventoryScanner()">Cargar por escaneo</button><button class="secondary" onclick="openAdjust()">Ajustar inventario</button></div>
+ <div class="inventoryCards"><div><span>Unidades</span><b id="invUnits">—</b></div><div><span>Valor</span><b id="invTotal">—</b></div><div><span>Con stock</span><b id="invWithStock">—</b></div><div><span>Sin stock</span><b id="invZero">—</b></div></div>
+ <div class="panel"><div class="panelhead"><h2>Inventario actual</h2><span id="inventoryUpdated"></span></div><div class="tablewrap"><table><thead><tr><th>Almacén</th><th>Código</th><th>Material</th><th>U/M</th><th>Stock</th><th>Mín.</th><th>Costo prom.</th><th>Valor</th><th>Estado</th></tr></thead><tbody id="inventoryBody"></tbody></table></div></div>
+</section>
+
+<section id="transfers" class="page hidden">
+ <div class="panel"><div class="panelhead"><h2>Transferencia entre almacenes</h2><span>Operación vinculada y auditada</span></div>
+  <form id="transferForm" class="gridform">
+   <label>Almacén de origen<select id="transferOrigin" required></select></label>
+   <label>Almacén de destino<select id="transferDestination" required></select></label>
+   <label>Material (código del Maestro)<input id="transferCode" list="materialList" placeholder="Código actual o anterior" required></label>
+   <label>Cantidad a transferir<input id="transferQuantity" type="number" min="0.0001" step="0.0001" required></label>
+   <label style="grid-column:span 2">Motivo / observación<input id="transferObservation" placeholder="Ej. traslado autorizado entre almacenes" required></label>
+   <button class="primary" type="submit">Registrar transferencia</button>
+  </form>
+  <div id="transferStatus" class="report-summary">Se registran simultáneamente la salida de origen y la entrada de destino. No cuenta como consumo operativo.</div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Últimas transferencias</h2><span>Historial reciente</span></div><div class="toolbar"><input id="transferSearch" placeholder="Buscar número, código o material"><button type="button" class="secondary" onclick="loadTransfers()">Buscar</button></div><div class="tablewrap"><table><thead><tr><th>Fecha</th><th>Número</th><th>Origen</th><th>Destino</th><th>Código</th><th>Material</th><th>Cantidad</th><th>Costo unitario</th><th>Valor</th><th>Usuario</th></tr></thead><tbody id="transfersBody"><tr><td colspan="10" class="empty">Cargando historial…</td></tr></tbody></table></div></div>
+</section>
+
+<section id="reconciliation" class="page hidden">
+ <div class="panel"><div class="panelhead"><h2>Conciliación física de inventario</h2><span>Compara stock del sistema con el conteo real</span></div>
+  <form id="reconciliationForm" class="gridform">
+   <label>Almacén<select id="reconWarehouse" required></select></label>
+   <label style="position:relative">Buscar material del Maestro<input id="reconMaterialSearch" autocomplete="off" placeholder="Código o descripción" required><div id="reconSuggestions" class="product-suggestions hidden"></div></label>
+   <input type="hidden" id="reconMaterialCode">
+   <label>Stock actual del sistema<input id="reconCurrentStock" readonly value="—"></label>
+   <label>Cantidad física contada<input id="reconCounted" type="number" min="0" step="0.0001" required></label>
+   <label style="grid-column:span 2">Motivo / observación<input id="reconReason" required placeholder="Ej. conteo físico del 10/10/2026"></label>
+   <button class="primary" type="submit">Registrar conciliación</button>
+  </form><div id="reconResult" class="report-summary">El ajuste solo afecta al material y almacén seleccionados; queda auditado.</div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Alertas de inventario</h2><span>Datos actuales de PostgreSQL</span><button type="button" class="secondary" onclick="loadAlerts()">Actualizar alertas</button></div><div class="tablewrap"><table><thead><tr><th>Almacén</th><th>Código</th><th>Material</th><th>Stock</th><th>Mínimo</th><th>Máximo</th><th>Costo</th><th>Alerta</th></tr></thead><tbody id="alertsBody"><tr><td colspan="8" class="empty">Consultando alertas…</td></tr></tbody></table></div></div>
+ <div class="panel"><div class="panelhead"><h2>Configurar mínimos por almacén</h2><span>Prioriza reposición según almacén</span></div><form id="policyForm" class="gridform"><label>Almacén<select id="policyWarehouse" required></select></label><label>Código de material<input id="policyCode" list="materialList" required placeholder="Ej. PR2301"></label><label>Stock mínimo<input id="policyMinimum" type="number" min="0" step="0.0001" required value="0"></label><label>Stock máximo (opcional)<input id="policyMaximum" type="number" min="0" step="0.0001" value="0"></label><button class="primary" type="submit">Guardar política de stock</button></form><div id="policyStatus" class="report-summary">La política se aplica únicamente al almacén seleccionado.</div></div>
+</section>
+
+<section id="loans" class="page hidden">
+ <div class="panel"><div class="panelhead"><h2>Préstamo de materiales</h2><span>Salida temporal · horario operativo 06:00 a 18:00 · hora de Lima</span></div>
+  <div id="loanAlertBanner" class="alert warn hidden" role="status"></div>
+  <form id="loanForm" class="gridform">
+   <label>Almacén<select id="loanWarehouse" required></select></label>
+   <label>DNI del trabajador<input id="loanDni" inputmode="numeric" list="peopleList" autocomplete="off" required placeholder="DNI del responsable del material"></label>
+   <label>Nombre del trabajador<input id="loanWorker" required placeholder="Se completa desde Personal"></label>
+   <label>Fecha y hora de entrega<input id="loanIssuedAt" type="datetime-local" required></label>
+   <label>Fecha y hora límite de devolución<input id="loanDueAt" type="datetime-local" required></label>
+   <label>Supervisor(es) responsable(s)<select id="loanSupervisors" multiple required size="3"></select></label>
+   <label style="grid-column:span 2">Foto de evidencia (opcional)<input id="loanEvidence" type="file" accept="image/*" capture="environment"><small>En celular puedes tomar una foto. Se comprime antes de guardarla en SILOG.</small></label>
+   <label style="grid-column:span 2">Observación<input id="loanObservation" placeholder="Proyecto, parada de planta, motivo del préstamo"></label>
+   <div style="grid-column:1/-1"><h3>Materiales prestados</h3><div class="tip">Busca por código o nombre del Maestro. La cantidad se descuenta temporalmente del almacén y se repone al devolverla.</div>
+    <div class="tablewrap"><table><thead><tr><th>Material / código</th><th>Disponible</th><th>Cantidad</th><th>Costo unitario</th><th>Valor prestado</th><th></th></tr></thead><tbody id="loanItemsBody"></tbody></table></div>
+    <div class="toolbar"><button type="button" class="secondary" id="loanAddItem">＋ Agregar material</button><strong id="loanTotal">Valor total: S/ 0.00</strong></div>
+   </div>
+   <button class="primary" type="submit">Registrar préstamo</button>
+  </form><div id="loanFormStatus" class="report-summary">La evidencia fotográfica es opcional. Los préstamos no cuentan como consumo definitivo; la devolución genera su movimiento de ingreso.</div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Préstamos pendientes y alertas de no devolución</h2><span>Las alertas se calculan con la hora actual de Perú</span><button type="button" class="secondary" id="loanRefresh">Actualizar</button></div>
+  <div id="loanPendingSummary" class="report-summary">Consultando préstamos...</div>
+  <div class="tablewrap"><table><thead><tr><th>Estado</th><th>N.º</th><th>Entrega</th><th>Límite</th><th>Almacén</th><th>DNI / trabajador</th><th>Supervisor(es)</th><th>Materiales pendientes</th><th>Valor pendiente</th><th>Evidencia</th><th>Acción</th></tr></thead><tbody id="loanPendingBody"><tr><td colspan="11" class="empty">Cargando préstamos…</td></tr></tbody></table></div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Reporte de préstamos y devoluciones</h2><span>Costos separados de las salidas definitivas</span></div>
+  <form id="loanReportForm" class="gridform"><label>Desde<input id="loanReportFrom" type="date"></label><label>Hasta<input id="loanReportTo" type="date"></label><label>Almacén<select id="loanReportWarehouse"><option value="">Todos los almacenes</option></select></label><label>Buscar DNI, trabajador o número<input id="loanReportSearch" placeholder="DNI / nombre / PR-..."></label><div class="toolbar"><button class="primary" type="submit">Consultar reporte</button><button type="button" class="secondary" id="loanReportCsv">Descargar CSV</button><button type="button" class="secondary" id="loanReportXlsx">Descargar Excel</button><button type="button" class="secondary" id="loanReportPrint">Imprimir / PDF</button></div></form>
+  <div id="loanReportSummary" class="report-summary">El reporte separa valor prestado, valor devuelto y valor aún pendiente. Las salidas definitivas se mantienen en sus reportes habituales.</div>
+  <div class="tablewrap"><table><thead><tr><th>N.º</th><th>Fecha entrega</th><th>Fecha límite</th><th>Devolución final</th><th>Almacén</th><th>DNI</th><th>Trabajador</th><th>Supervisores</th><th>Material</th><th>Cantidad</th><th>Devuelto</th><th>Pendiente</th><th>Costo unit.</th><th>Valor prestado</th><th>Valor pendiente</th><th>Estado</th></tr></thead><tbody id="loanReportBody"><tr><td colspan="16" class="empty">Consulta el reporte para mostrar resultados.</td></tr></tbody></table></div>
+ </div>
+</section>
+
+<section id="data" class="page hidden">
+ <div class="panel">
+  <div class="panelhead"><h2>DATA cargada</h2><span>Histórico ya digitado en SILOG · no necesitas volver a subir el Excel</span></div>
+  <div class="toolbar wrap datafilters">
+   <input id="dataSearch" placeholder="Buscar código, producto, DNI, solicitante, documento...">
+   <input id="dataFrom" type="date"><input id="dataTo" type="date">
+   <select id="dataType"><option value="">Todos los movimientos</option><option value="OUT">Salidas</option><option value="INITIAL">Inventario inicial</option><option value="IN">Ingresos</option><option value="ADJUSTMENT">Ajustes</option></select>
+   <select id="dataWarehouse"><option value="">Todos los almacenes</option></select>
+   <input id="dataDni" placeholder="DNI">
+   <button onclick="loadData(1)"> Buscar</button><button class="secondary" onclick="clearDataFilters()">Limpiar</button>
+  </div>
+  <div class="dataSummary"><b id="dataTotal">—</b> registros cargados <span>·</span> <span id="dataPageInfo">—</span></div>
+  <div class="tablewrap dataTable"><table><thead><tr>
+   <th>AÑO</th><th>ALMACEN</th><th>CONDICION</th><th>DOC</th><th>N°</th><th>FECHA ATENCIÓN</th><th>DIGITACIÓN</th><th>CeCo</th><th>CLIENTE</th><th>AREA</th><th>PLACA</th><th>CÓDIGO</th><th>CANT</th><th>STOCK</th><th>UND</th><th>PRODUCTO</th><th>GRUPO</th><th>MON</th><th>PU</th><th>S/ Total</th><th>DNI</th><th>SOLICITANTE</th><th>ENTREGADO</th><th>AUTORIZADO</th><th>TIPO</th>
+  </tr></thead><tbody id="dataBody"></tbody></table></div>
+  <div class="pager"><button class="secondary" onclick="changeDataPage(-1)">← Anterior</button><span id="dataPager">—</span><button class="secondary" onclick="changeDataPage(1)">Siguiente →</button></div>
+ </div>
+</section>
+
+<section id="people" class="page hidden">
+ <div class="panel"><div class="panelhead"><h2>Personal</h2><span>Maestro dinámico</span></div><form id="personForm" class="gridform"><label>DNI<input name="dni" required></label><label>Nombres y apellidos<input name="nombre" required></label><label>Cargo<input name="cargo"></label><label>Cliente<input name="cliente"></label><label>Área<input name="area"></label><button class="primary">Guardar / actualizar</button></form></div>
+ <div class="panel"><div class="toolbar wrap"><input id="peopleSearch" placeholder="Buscar DNI o nombre" oninput="loadPeople()"><input id="peopleImportFile" type="file" accept=".xlsx,.xls,.csv" class="hidden"><button type="button" class="secondary" onclick="$('#peopleImportFile').click()">⬆ Importar personal Excel / CSV</button><span id="peopleImportStatus" class="muted"></span></div><div class="tip">Importa columnas DNI, NOMBRES y CARGO. El cliente se asigna a MINERA CHINALCO PERU S.A.A. cuando no viene en el archivo; el área queda en blanco si no está indicada. Los DNI existentes se actualizan, no se duplican.</div><div class="tablewrap"><table><thead><tr><th>DNI</th><th>Nombre</th><th>Cargo</th><th>Cliente</th><th>Área</th></tr></thead><tbody id="peopleBody"></tbody></table></div></div>
+</section>
+
+<section id="workerKardex" class="page hidden">
+ <div class="panel">
+  <div class="panelhead"><h2>Kardex por trabajador</h2><span>Historial de materiales entregados por DNI</span></div>
+  <form id="workerKardexForm" class="gridform">
+   <label>DNI del trabajador<input id="workerKardexDni" name="dni" inputmode="numeric" autocomplete="off" placeholder="Ingresa el DNI" required minlength="4"></label>
+   <label>Desde (fecha de atención)<input id="workerKardexFrom" name="from" type="date"></label>
+   <label>Hasta (fecha de atención)<input id="workerKardexTo" name="to" type="date"></label>
+   <label>Almacén<select id="workerKardexWarehouse" name="warehouse"><option value="">Todos los almacenes</option></select></label>
+   <div style="display:flex;gap:8px;align-items:end;flex-wrap:wrap"><button class="primary" type="submit"> Consultar Kardex</button><button class="secondary" type="button" id="workerKardexClear">Limpiar</button></div>
+   <div style="display:flex;gap:8px;align-items:end;flex-wrap:wrap"><button class="secondary" type="button" id="workerKardexCsv">⬇ Exportar CSV</button><button class="secondary" type="button" id="workerKardexXlsx">⬇ Exportar Excel</button></div>
+  </form>
+  <div class="tip">Consulta salidas registradas para el DNI indicado. Se muestran fecha de atención, fecha de digitación, almacén, materiales, cantidades, costos, documento y responsables. La consulta no modifica el inventario.</div>
+ </div>
+ <div class="inventoryCards workerKardexCards">
+  <div><span>Trabajador</span><b id="workerKardexName" style="font-size:16px">—</b></div>
+  <div><span>Movimientos / líneas</span><b id="workerKardexCount">—</b></div>
+  <div><span>Unidades entregadas</span><b id="workerKardexUnits">—</b></div>
+  <div><span>Valor total entregado</span><b id="workerKardexValue">—</b></div>
+ </div>
+ <div class="panel">
+  <div class="panelhead"><h2>Historial de entregas</h2><span id="workerKardexSummary">Ingresa un DNI para consultar.</span></div>
+  <div class="tablewrap"><table><thead><tr><th>Fecha atención</th><th>Digitación</th><th>Almacén</th><th>Documento / N°</th><th>Código</th><th>Material</th><th>Unidad</th><th>Cantidad</th><th>Costo unitario</th><th>Total</th><th>Área / CeCo</th><th>Entregado por</th><th>Autorizado por</th><th>Usuario SILOG</th></tr></thead><tbody id="workerKardexBody"><tr><td colspan="14" class="empty">Ingresa el DNI y pulsa Consultar Kardex.</td></tr></tbody></table></div>
+ </div>
+</section>
+
+<section id="users" class="page hidden">
+ <div class="panel"><div class="panelhead"><h2>Usuarios del sistema</h2><span>Creación y administración de accesos</span></div>
+  <form id="userForm" class="gridform">
+   <label>Usuario<input name="username" required autocomplete="off" placeholder="ej. almacen01"></label>
+   <label>Nombre completo<input name="nombre" required></label>
+   <label>Rol<select name="rol"><option>ADMIN</option><option>SUPERVISOR</option><option>ALMACEN</option><option selected>OPERADOR</option><option>CONSULTA</option></select></label>
+   <label>Contraseña<input name="password" type="password" minlength="6" required autocomplete="new-password"></label>
+   <button class="primary">Crear / actualizar usuario</button>
+  </form>
+ </div>
+ <div class="panel"><div class="toolbar"><input id="usersSearch" placeholder="Buscar usuario o nombre" oninput="loadUsers()"></div><div class="tablewrap"><table><thead><tr><th>Usuario</th><th>Nombre</th><th>Rol</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="usersBody"></tbody></table></div></div>
+</section>
+
+<section id="export" class="page hidden">
+ <div class="panel"><div class="panelhead"><h2>Últimos materiales agregados / movimientos</h2><span>Según registros reales de SILOG</span></div>
+  <form id="resourcesReportForm" class="gridform">
+   <label>Desde (fecha de registro)<input type="date" name="from" id="resourcesFrom"></label>
+   <label>Hasta (fecha de registro)<input type="date" name="to" id="resourcesTo"></label>
+   <label>Almacén<select name="warehouse" id="resourcesWarehouse"><option value="">Todos los almacenes</option></select></label>
+   <label>Tipo de movimiento<select name="type" id="resourcesType"><option value="INCOMING" selected>Ingresos y cargas</option><option value="ALL">Todos los movimientos</option><option value="INITIAL">Inventario inicial</option><option value="IN">Ingreso manual / compra</option><option value="OUT">Salidas</option><option value="ADJUSTMENT">Ajustes</option><option value="TRANSFER_IN">Ingreso por transferencia</option><option value="TRANSFER_OUT">Salida por transferencia</option></select></label>
+   <label style="grid-column:span 2">Buscar código, descripción, almacén, documento o usuario<input name="search" id="resourcesSearch" placeholder="Ej. PR2301, TAPON AUDITIVO o PLANTA PILOTO"></label>
+   <div style="display:flex;gap:8px;align-items:end;flex-wrap:wrap"><button class="primary" type="submit">Consultar</button><button class="secondary" type="button" id="resourcesClear">Limpiar filtros</button></div>
+   <div style="display:flex;gap:8px;align-items:end;flex-wrap:wrap"><button class="secondary" type="button" id="resourcesCsv">⬇ Exportar CSV</button><button class="secondary" type="button" id="resourcesXlsx">⬇ Exportar Excel</button></div>
+  </form>
+  <div class="tip">Incluye fecha y hora de registro, almacén, código actual y anterior, material del Maestro, cantidad, unidad, costo unitario, valor total, usuario, origen, documento y stock posterior. Los datos se consultan directamente de los movimientos guardados.</div>
+  <div class="report-summary" id="resourcesReportSummary">Carga el reporte para ver los últimos registros.</div>
+  <div class="tablewrap"><table><thead><tr><th>Registrado</th><th>Almacén</th><th>Código</th><th>Código anterior</th><th>Material</th><th>Tipo</th><th>Cantidad</th><th>U/M</th><th>Costo unitario</th><th>Valor total</th><th>Stock después</th><th>Usuario</th><th>Documento / observación</th></tr></thead><tbody id="resourcesReportBody"><tr><td colspan="13" class="empty">Presiona Consultar para ver los registros más recientes.</td></tr></tbody></table></div>
+ </div>
+ <div class="panel" id="scheduleReportsPanel"><div class="panelhead"><h2>Programación automática de reportes</h2><span>Genera una copia en SILOG según horario de Lima</span></div>
+  <form id="scheduleReportForm" class="gridform"><label>Nombre de programación<input id="scheduleName" required placeholder="Ej. Costos diarios Planta Piloto"></label><label>Reporte<select id="scheduleType" required><option value="daily-costs">Costos diarios por almacén</option><option value="stock-alerts">Inventario valorizado y alertas</option><option value="daily-close">Cierre diario de inventario</option><option value="consumption">Consumo por trabajador y CeCo</option></select></label><label>Frecuencia<select id="scheduleFrequency"><option value="DAILY">Diario</option><option value="WEEKLY">Semanal</option></select></label><label id="scheduleDayWrap" class="hidden">Día de la semana<select id="scheduleDay"><option value="1">Lunes</option><option value="2">Martes</option><option value="3">Miércoles</option><option value="4">Jueves</option><option value="5">Viernes</option><option value="6">Sábado</option><option value="0">Domingo</option></select></label><label>Hora (Lima)<input id="scheduleTime" type="time" value="07:00" required></label><label>Almacén<select id="scheduleWarehouse"><option value="">Todos los almacenes</option></select></label><button class="primary" type="submit">Guardar programación</button></form>
+  <div class="tip">Los reportes programados se generan automáticamente y quedan guardados para descargarlos desde el historial. No se envían por correo: eso requiere configurar un servicio de correo.</div>
+  <div id="scheduleStatus" class="report-summary">Configura reportes diarios o semanales. El servidor revisa las programaciones cada minuto.</div>
+  <div class="tablewrap"><table><thead><tr><th>Nombre</th><th>Reporte</th><th>Frecuencia</th><th>Hora</th><th>Almacén</th><th>Activo</th><th>Última ejecución</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="schedulesBody"><tr><td colspan="9" class="empty">Cargando programaciones…</td></tr></tbody></table></div>
+  <h3>Historial de ejecuciones</h3><div class="tablewrap"><table><thead><tr><th>Fecha</th><th>Reporte</th><th>Tipo</th><th>Filas</th><th>Estado</th><th>Error</th><th>Descarga</th></tr></thead><tbody id="reportRunsBody"><tr><td colspan="7" class="empty">Todavía no hay ejecuciones.</td></tr></tbody></table></div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Costos diarios por almacén</h2><span>Salidas valorizadas por fecha y material</span></div>
+  <form id="dailyCostsForm" class="gridform reportFilterGrid">
+   <label>Desde<input id="dailyCostsFrom" type="date"></label><label>Hasta<input id="dailyCostsTo" type="date"></label>
+   <label>Almacén<select id="dailyCostsWarehouse"><option value="">Todos los almacenes</option></select></label>
+   <div class="reportActions"><button class="primary" type="submit">Consultar costos</button><button class="secondary" type="button" onclick="downloadAdvancedReport('daily-costs','csv')">CSV</button><button class="secondary" type="button" onclick="downloadAdvancedReport('daily-costs','xlsx')">Excel</button><button class="secondary" type="button" onclick="printReportTable('dailyCostsBody','Costos diarios por almacén')">Imprimir / PDF</button></div>
+  </form><div id="dailyCostsSummary" class="report-summary">Selecciona un período y consulta.</div>
+  <div class="tablewrap"><table><thead><tr><th>Fecha</th><th>Almacén</th><th>Código</th><th>Material</th><th>Unidad</th><th>Cantidad salida</th><th>Costo unit. prom.</th><th>Costo total</th><th>Movimientos</th></tr></thead><tbody id="dailyCostsBody"><tr><td colspan="9" class="empty">Sin consulta.</td></tr></tbody></table></div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Kardex valorizado por material</h2><span>Saldo acumulado por almacén</span></div>
+  <form id="materialKardexForm" class="gridform reportFilterGrid">
+   <label>Código o nombre<input id="materialKardexSearch" placeholder="Ej. PR2301 o TAPON AUDITIVO" required></label><label>Desde<input id="materialKardexFrom" type="date"></label><label>Hasta<input id="materialKardexTo" type="date"></label>
+   <label>Almacén<select id="materialKardexWarehouse"><option value="">Todos los almacenes</option></select></label>
+   <div class="reportActions"><button class="primary" type="submit">Consultar Kardex</button><button class="secondary" type="button" onclick="downloadAdvancedReport('material-kardex','csv')">CSV</button><button class="secondary" type="button" onclick="downloadAdvancedReport('material-kardex','xlsx')">Excel</button><button class="secondary" type="button" onclick="printReportTable('materialKardexBody','Kardex valorizado por material')">Imprimir / PDF</button></div>
+  </form><div id="materialKardexSummary" class="report-summary">Ingresa al menos 2 caracteres del código o nombre.</div>
+  <div class="tablewrap"><table><thead><tr><th>Fecha</th><th>Almacén</th><th>Código</th><th>Material</th><th>Tipo</th><th>Cantidad</th><th>Variación</th><th>Saldo después</th><th>Costo unit.</th><th>Valor</th><th>Documento</th><th>Usuario</th></tr></thead><tbody id="materialKardexBody"><tr><td colspan="12" class="empty">Sin consulta.</td></tr></tbody></table></div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Consumo por trabajador y centro de costo</h2><span>Salidas agrupadas por persona, almacén y material</span></div>
+  <form id="consumptionForm" class="gridform reportFilterGrid">
+   <label>Desde<input id="consumptionFrom" type="date"></label><label>Hasta<input id="consumptionTo" type="date"></label><label>DNI (opcional)<input id="consumptionDni" inputmode="numeric" placeholder="Filtrar por DNI"></label>
+   <label>Almacén<select id="consumptionWarehouse"><option value="">Todos los almacenes</option></select></label><label>Centro de costo<select id="consumptionCeco"><option value="">Todos los centros de costo</option></select></label>
+   <div class="reportActions"><button class="primary" type="submit">Consultar consumo</button><button class="secondary" type="button" onclick="downloadAdvancedReport('consumption','csv')">CSV</button><button class="secondary" type="button" onclick="downloadAdvancedReport('consumption','xlsx')">Excel</button><button class="secondary" type="button" onclick="printReportTable('consumptionBody','Consumo por trabajador y centro de costo')">Imprimir / PDF</button></div>
+  </form><div id="consumptionSummary" class="report-summary">Consulta el consumo registrado por persona y centro de costo.</div>
+  <div class="tablewrap"><table><thead><tr><th>DNI</th><th>Trabajador</th><th>Área</th><th>CeCo</th><th>Centro de costo</th><th>Almacén</th><th>Código</th><th>Material</th><th>Unidad</th><th>Movimientos</th><th>Cantidad</th><th>Valor total</th></tr></thead><tbody id="consumptionBody"><tr><td colspan="12" class="empty">Sin consulta.</td></tr></tbody></table></div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Cierre diario y conciliación de stock</h2><span>Existencias calculadas al final de la fecha seleccionada</span></div>
+  <form id="dailyCloseForm" class="gridform reportFilterGrid"><label>Fecha de cierre<input id="dailyCloseDate" type="date" required></label><label>Almacén<select id="dailyCloseWarehouse"><option value="">Todos los almacenes</option></select></label>
+   <div class="reportActions"><button class="primary" type="submit">Generar cierre</button><button class="secondary" type="button" onclick="downloadAdvancedReport('daily-close','csv')">CSV</button><button class="secondary" type="button" onclick="downloadAdvancedReport('daily-close','xlsx')">Excel</button><button class="secondary" type="button" onclick="printReportTable('dailyCloseBody','Cierre diario de inventario')">Imprimir / PDF</button></div>
+  </form><div id="dailyCloseSummary" class="report-summary">Elige la fecha y genera el cierre. La consulta no modifica existencias.</div>
+  <div class="tablewrap"><table><thead><tr><th>Fecha corte</th><th>Almacén</th><th>Código</th><th>Material</th><th>Unidad</th><th>Stock al cierre</th><th>Mínimo</th><th>Costo unitario</th><th>Valor</th><th>Estado</th></tr></thead><tbody id="dailyCloseBody"><tr><td colspan="10" class="empty">Sin consulta.</td></tr></tbody></table></div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Inventario valorizado y alertas</h2><span>Stock por almacén, mínimos, máximos y costo</span></div>
+  <form id="stockAlertsReportForm" class="gridform reportFilterGrid"><label>Almacén<select id="stockAlertsReportWarehouse"><option value="">Todos los almacenes</option></select></label><div class="reportActions"><button class="primary" type="submit">Consultar inventario</button><button class="secondary" type="button" onclick="downloadStockAlertsReport('csv')">CSV</button><button class="secondary" type="button" onclick="downloadStockAlertsReport('xlsx')">Excel</button><button class="secondary" type="button" onclick="printReportTable('stockAlertsReportBody','Inventario valorizado y alertas')">Imprimir / PDF</button></div></form>
+  <div id="stockAlertsReportSummary" class="report-summary">Consulta inventario, valorización y alertas por almacén.</div><div class="tablewrap"><table><thead><tr><th>Almacén</th><th>Código</th><th>Material</th><th>Unidad</th><th>Stock</th><th>Mínimo</th><th>Máximo</th><th>Costo</th><th>Valor</th><th>Alerta</th></tr></thead><tbody id="stockAlertsReportBody"><tr><td colspan="10" class="empty">Sin consulta.</td></tr></tbody></table></div>
+ </div>
+ <div class="panel"><div class="panelhead"><h2>Descargar recursos — formato DATA</h2><span>Compatible con tu archivo compartido</span></div><form id="exportForm" class="gridform"><label>Desde<input type="date" name="from" required></label><label>Hasta<input type="date" name="to" required></label><button class="primary">Descargar DATA</button></form><div class="tip">La exportación conserva las 23 columnas operativas de DATA y calcula el stock acumulado por almacén y material para cada movimiento.</div></div>
+</section>
+
+<section id="audit" class="page hidden">
+ <div class="panel"><div class="panelhead"><h2>Auditoría de SILOG</h2><span>Solo administrador · últimos 500 eventos</span></div><div class="toolbar wrap"><input id="auditSearch" placeholder="Buscar usuario, acción, entidad o ID"><button type="button" class="secondary" onclick="loadAudit()">Buscar</button></div><div class="tablewrap"><table><thead><tr><th>Fecha</th><th>Usuario</th><th>Acción</th><th>Entidad</th><th>ID</th><th>Detalle</th></tr></thead><tbody id="auditBody"><tr><td colspan="6" class="empty">Cargando auditoría…</td></tr></tbody></table></div></div>
+</section>
+
+<dialog id="createWarehouseDialog"><form id="createWarehouseForm" class="gridform" method="dialog"><h2 style="grid-column:1/-1">＋ Crear nuevo almacén</h2><p style="grid-column:1/-1;margin:0;color:#667581">Agrega un almacén nuevo sin eliminar ni modificar los almacenes existentes, sus materiales ni su historial.</p><label>Nombre del almacén<input id="createWarehouseName" name="nombre" required maxlength="100" placeholder="Ej. PLANTA PILOTO"></label><label>Código del almacén (opcional)<input id="createWarehouseCode" name="codigo" maxlength="40" placeholder="Se genera automáticamente si queda vacío"></label><div id="createWarehouseStatus" class="report-summary" style="grid-column:1/-1"></div><div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button class="primary" type="submit">Guardar almacén</button><button type="button" class="secondary" id="cancelCreateWarehouse">Cancelar</button></div></form></dialog>
+<dialog id="clearWarehouseDialog"><form id="clearWarehouseForm" class="gridform" method="dialog"><h2 style="grid-column:1/-1">Vaciar stock de un almacén</h2><p style="grid-column:1/-1;margin:0;color:#667581">Pone a cero las existencias del almacén elegido, conservando el Maestro y el historial. Se registra un movimiento de regularización y una auditoría. No afecta otros almacenes.</p><label>Almacén a vaciar<select id="clearWarehouseSelect" name="almacen" required></select></label><label>Motivo del vaciado<input id="clearWarehouseReason" name="motivo" required placeholder="Ej. reinicio de carga inicial"></label><label style="grid-column:1/-1">Confirmación: escribe VACIAR<input id="clearWarehouseConfirm" name="confirmacion" required autocomplete="off" placeholder="VACIAR"></label><div class="alert danger" style="grid-column:1/-1">Esta operación modifica el stock actual del almacén seleccionado. El historial no se elimina y el movimiento quedará auditado.</div><div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button class="primary danger" type="submit">Confirmar vaciado</button><button type="button" class="secondary" onclick="$('#clearWarehouseDialog').close()">Cancelar</button></div></form></dialog>
+<dialog id="manualInventoryDialog"><form id="manualInventoryForm" class="gridform" method="dialog">
+<h2>Ingreso manual de inventario por almacén</h2>
+<p style="grid-column:1/-1;margin:0;color:#667581;font-size:13px">Busca el material en el Maestro, selecciona el almacén e ingresa la cantidad que vas a incorporar. No necesitas código de barras.</p>
+<label>Almacén destino<select id="manualInvWarehouse" name="almacen" required></select></label>
+<label style="position:relative">Buscar material del Maestro<input id="manualInvSearch" placeholder="Código o descripción (ej. PR2301 o TAPON AUDITIVO)" autocomplete="off" required><div id="manualInvSuggestions" class="product-suggestions hidden"></div></label>
+<input type="hidden" id="manualInvCode" name="codigo">
+<div id="manualInvSelected" class="preview" style="grid-column:1/-1;margin:0">Selecciona un material del Maestro.</div>
+<label>Cantidad a ingresar<input name="cantidad" id="manualInvQuantity" type="number" min="0.001" step="0.001" required></label>
+<label>Costo unitario (S/)<input name="costo_unitario" id="manualInvCost" type="number" min="0" step="0.000001" placeholder="Se usará el costo existente si lo dejas vacío"></label>
+<label>Documento<input name="documento" value="INGRESO-MANUAL"></label>
+<label>Observación<input name="observacion" placeholder="Ej. carga inicial / compra / regularización" required></label>
+<div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button class="primary" type="submit">Guardar ingreso en este almacén</button><button type="button" class="secondary" onclick="$('#manualInventoryDialog').close()">Cancelar</button></div>
+</form></dialog>
+<dialog id="adjustDialog"><form method="dialog" id="adjustForm" class="gridform"><h2>Ajuste de inventario</h2><label>Almacén<select name="almacen" id="adjustWh"></select></label><label>Producto<input name="codigo" list="materialList" required></label><label>Tipo<select name="direccion"><option value="ENTRADA">Entrada / ajuste positivo</option><option value="SALIDA">Salida / ajuste negativo</option></select></label><label>Cantidad<input type="number" name="cantidad" step="0.0001" min="0.0001" required></label><label>Costo unitario<input type="number" name="costo_unitario" step="0.000001" min="0"></label><label>Documento<input name="documento" value="AJUSTE"></label><label>Observación<input name="observacion" required></label><button class="primary" value="default">Guardar ajuste</button><button type="button" class="secondary" onclick="$('#adjustDialog').close()">Cancelar</button></form></dialog>
+
+<dialog id="loanExtendDialog"><form method="dialog" id="loanExtendForm" class="gridform"><h2 style="grid-column:1/-1">Extender plazo del préstamo</h2><p id="loanExtendHeading" style="grid-column:1/-1"></p><label>Nuevo plazo (hora de Lima)<input id="loanExtendDueAt" type="datetime-local" required></label><label style="grid-column:span 2">Motivo y autorización<input id="loanExtendReason" required placeholder="Motivo de la extensión autorizada"></label><div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button class="primary" type="submit" value="default">Guardar extensión autorizada</button><button class="secondary" type="button" id="loanExtendCancel">Cancelar</button></div></form></dialog>
+<dialog id="loanReturnDialog"><form method="dialog" id="loanReturnForm" class="gridform"><h2 style="grid-column:1/-1">Registrar devolución</h2><p id="loanReturnHeading" style="grid-column:1/-1"></p><div id="loanReturnItems" style="grid-column:1/-1"></div><label style="grid-column:1/-1">Observación<input id="loanReturnObservation" placeholder="Estado del material o incidencia"></label><div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button class="primary" type="submit" value="default">Guardar devolución</button><button class="secondary" type="button" id="loanReturnCancel">Cancelar</button></div></form></dialog>
+<datalist id="materialList"></datalist><datalist id="peopleList"></datalist>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@zxing/browser@0.1.5/umd/zxing-browser.min.js"></script>
+<script src="/app.js"></script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{}))}</script>
+</body></html>

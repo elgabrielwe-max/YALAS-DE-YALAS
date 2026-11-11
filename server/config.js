@@ -1,0 +1,4 @@
+import path from 'node:path';
+const csv=v=>String(v||'').split(',').map(x=>x.trim()).filter(Boolean);
+const required=(name,fallback='')=>{const v=process.env[name]??fallback;if(!v&&process.env.NODE_ENV==='production')throw new Error(`Falta variable obligatoria: ${name}`);return v;};
+export const config={port:Number(process.env.PORT||8080),databaseUrl:required('DATABASE_URL'),databaseSsl:process.env.DATABASE_SSL==='true',databaseSslRejectUnauthorized:process.env.DATABASE_SSL_REJECT_UNAUTHORIZED==='true',databasePoolMax:Number(process.env.DATABASE_POOL_MAX||12),jwtSecret:required('JWT_SECRET',process.env.NODE_ENV==='test'?'test-secret':''),jwtIssuer:process.env.JWT_ISSUER||'silog',masterUsername:process.env.MASTER_USERNAME||'admin',masterInitialPassword:process.env.MASTER_INITIAL_PASSWORD||'Admin123!',masterName:process.env.MASTER_NAME||'Administrador SILOG',corsOrigins:csv(process.env.CORS_ORIGINS),dataDir:path.resolve(process.env.DATA_DIR||'./data')};
