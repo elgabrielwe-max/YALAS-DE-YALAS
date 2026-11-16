@@ -501,17 +501,26 @@ app.get('/api/materials/lookup',async(req,res)=>{
   if(term.length<1) return res.json([]);
   try{
     const r=await q(`SELECT m.id,m.codigo,m.codigo_anterior,m.descripcion,m.unidad,m.moneda,m.ubicacion,m.costo_referencia,
-      COALESCE(b.cantidad,0) stock,COALESCE(NULLIF(b.costo_promedio,0),NULLIF(m.costo_referencia,0),0) costo_promedio,COALESCE(b.valor,0) valor,
+      CASE WHEN b.id IS NOT NULL THEN COALESCE(b.cantidad,0)
+           ELSE COALESCE(ledger.stock,0) END stock,
+      COALESCE(NULLIF(b.costo_promedio,0),NULLIF(m.costo_referencia,0),NULLIF(ledger.costo,0),0) costo_promedio,
+      CASE WHEN b.id IS NOT NULL THEN COALESCE(b.valor,0)
+           ELSE COALESCE(ledger.stock,0)*COALESCE(NULLIF(m.costo_referencia,0),NULLIF(ledger.costo,0),0) END valor,
       g.nombre grupo,f.nombre familia
       FROM materials m LEFT JOIN material_groups g ON g.id=m.grupo_id LEFT JOIN material_families f ON f.id=m.familia_id
-      LEFT JOIN inventory_balances b ON b.material_id=m.id AND ($2='' OR b.warehouse_id=CASE WHEN $2~'^\\d+$' THEN $2::bigint ELSE (SELECT id FROM warehouses WHERE nombre=$2 OR codigo=$2 LIMIT 1) END)
+      LEFT JOIN warehouses w ON ($2<>'' AND (w.id=CASE WHEN $2~'^\\d+$' THEN $2::bigint ELSE NULL END OR w.nombre=$2 OR w.codigo=$2))
+      LEFT JOIN inventory_balances b ON b.material_id=m.id AND b.warehouse_id=w.id
+      LEFT JOIN LATERAL (
+        SELECT SUM(CASE WHEN v.movement_type IN ('INITIAL','IN','TRANSFER_IN','ADJUSTMENT') THEN v.cantidad ELSE -v.cantidad END) stock,
+               MAX(NULLIF(v.costo_unitario,0)) costo
+        FROM inventory_movements v WHERE v.material_id=m.id AND ($2='' OR v.warehouse_id=w.id)
+      ) ledger ON true
       WHERE m.activo AND (m.codigo ILIKE '%'||$1||'%' OR COALESCE(m.codigo_anterior,'') ILIKE '%'||$1||'%' OR m.descripcion ILIKE '%'||$1||'%'
         OR EXISTS(SELECT 1 FROM material_barcodes mb WHERE mb.material_id=m.id AND mb.activo AND mb.barcode ILIKE '%'||$1||'%'))
       ORDER BY CASE WHEN upper(m.codigo)=upper($1) THEN 0 WHEN upper(COALESCE(m.codigo_anterior,''))=upper($1) THEN 1 WHEN m.descripcion ILIKE $1||'%' THEN 2 ELSE 3 END,m.descripcion LIMIT 50`,[term,warehouse]);
     res.json(r.rows);
   }catch(e){res.status(500).json({error:e.message})}
 });
-
 app.get('/api/materials',async(req,res)=>{
   const s=(req.query.search||'').trim();
   const group=req.query.group||'';
